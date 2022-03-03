@@ -1,7 +1,7 @@
 Original App Design Project - README Template
 ===
 
-# APP_NAME_HERE
+# Silly Slots
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -11,7 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 legendary. Each NFT rewards their holder with a portion of the profited "house money," and each tier will have a higher percent than the last. Additionally, the holders who wish to gamble can connect their NFT to the website and get the increased percentage of winning that's attached with their rarity. The plan is to do the mint (mint price undecided rn) like a day or even a couple hours before we launch the gambling slot machine website and then whoever minted one could connect their nft to the website to then get the improved odds, otherwise people who don’t have an nft can still play but will get the base odds. We would connect the app to users NFT wallet and give them the ability to gamble their NFT's or house money. The interface would be sleek, simple, and easy to use.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
