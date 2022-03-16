@@ -118,6 +118,7 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 | nftUsername |	String |	The users Near/ Ethereum wallet username |
 | nftPass	| String | The users near/ Ethereum key to access their wallet |
 | transferNft	| DateTime	| Date when ownership of an NFT is transferred to a new user |
+| email | String | Unique user email for the user to sign up for an account | 
 
 
 ### Networking
