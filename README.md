@@ -1,7 +1,7 @@
 Original App Design Project - README Template
 ===
 
-# Silly SLots
+# Silly Slots
 
 ## Table of Contents
 1. [Overview](#Overview)
