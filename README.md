@@ -123,6 +123,21 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 ### Networking
 - [Add list of network requests by screen ]
 - Login Screen 
-  - (Read/GET)   
+  - (Read/GET) 
+- Crypto Wallet 
+  - (Read/GET) Query all NFTs where user is owner 
+  let query = PFQuery(className:"Wallet")
+query.whereKey("owner", equalTo: currentUser)
+query.order(byDescending: "createdAt")
+query.findObjectsInBackground { (wallet: [PFObject]?, error: Error?) in
+   if let error = error { 
+      print(error.localizedDescription)
+   } else if let wallet = wallet {
+      print("Successfully retrieved \(posts.count) posts.")
+  // TODO: Do something with posts...
+   }
+}   
+
+
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
