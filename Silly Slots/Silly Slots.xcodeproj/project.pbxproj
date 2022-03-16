@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95151FBE27E2A9A1008ADA23 /* AppDelegate.swift */; };
+		95151FC127E2A9A1008ADA23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95151FC027E2A9A1008ADA23 /* SceneDelegate.swift */; };
+		95151FC327E2A9A1008ADA23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95151FC227E2A9A1008ADA23 /* ViewController.swift */; };
+		95151FC627E2A9A1008ADA23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95151FC427E2A9A1008ADA23 /* Main.storyboard */; };
+		95151FC827E2A9A7008ADA23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95151FC727E2A9A7008ADA23 /* Assets.xcassets */; };
+		95151FCB27E2A9A7008ADA23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95151FC927E2A9A7008ADA23 /* LaunchScreen.storyboard */; };
+		95151FD427E2AF51008ADA23 /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 95151FD327E2AF51008ADA23 /* Solana */; };
+		EB8E68A196CB83ECE15908A9 /* Pods_Silly_Slots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94E814DCE3E13247F541FDA /* Pods_Silly_Slots.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		95151FBB27E2A9A1008ADA23 /* Silly Slots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silly Slots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95151FBE27E2A9A1008ADA23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		95151FC027E2A9A1008ADA23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		95151FC227E2A9A1008ADA23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95151FC527E2A9A1008ADA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95151FC727E2A9A7008ADA23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95151FCA27E2A9A7008ADA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95151FCC27E2A9A7008ADA23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD43E8A5D2451C958F131CE3 /* Pods-Silly Slots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.release.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.release.xcconfig"; sourceTree = "<group>"; };
+		D1669697F6732184B0E28C2A /* Pods-Silly Slots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.debug.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.debug.xcconfig"; sourceTree = "<group>"; };
+		F94E814DCE3E13247F541FDA /* Pods_Silly_Slots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silly_Slots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95151FB827E2A9A1008ADA23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95151FD427E2AF51008ADA23 /* Solana in Frameworks */,
+				EB8E68A196CB83ECE15908A9 /* Pods_Silly_Slots.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A6769A03902D1EFF4C0BC4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F94E814DCE3E13247F541FDA /* Pods_Silly_Slots.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		715339F9CEE7BE74552BD00C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1669697F6732184B0E28C2A /* Pods-Silly Slots.debug.xcconfig */,
+				BD43E8A5D2451C958F131CE3 /* Pods-Silly Slots.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		95151FB227E2A9A1008ADA23 = {
+			isa = PBXGroup;
+			children = (
+				95151FBD27E2A9A1008ADA23 /* Silly Slots */,
+				95151FBC27E2A9A1008ADA23 /* Products */,
+				715339F9CEE7BE74552BD00C /* Pods */,
+				0A6769A03902D1EFF4C0BC4E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		95151FBC27E2A9A1008ADA23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95151FBB27E2A9A1008ADA23 /* Silly Slots.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95151FBD27E2A9A1008ADA23 /* Silly Slots */ = {
+			isa = PBXGroup;
+			children = (
+				95151FBE27E2A9A1008ADA23 /* AppDelegate.swift */,
+				95151FC027E2A9A1008ADA23 /* SceneDelegate.swift */,
+				95151FC227E2A9A1008ADA23 /* ViewController.swift */,
+				95151FC427E2A9A1008ADA23 /* Main.storyboard */,
+				95151FC727E2A9A7008ADA23 /* Assets.xcassets */,
+				95151FC927E2A9A7008ADA23 /* LaunchScreen.storyboard */,
+				95151FCC27E2A9A7008ADA23 /* Info.plist */,
+			);
+			path = "Silly Slots";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95151FBA27E2A9A1008ADA23 /* Silly Slots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95151FCF27E2A9A7008ADA23 /* Build configuration list for PBXNativeTarget "Silly Slots" */;
+			buildPhases = (
+				964B3FF71B9C292E8EECAB64 /* [CP] Check Pods Manifest.lock */,
+				95151FB727E2A9A1008ADA23 /* Sources */,
+				95151FB827E2A9A1008ADA23 /* Frameworks */,
+				95151FB927E2A9A1008ADA23 /* Resources */,
+				7459F98D73196529BF4A307E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Silly Slots";
+			packageProductDependencies = (
+				95151FD327E2AF51008ADA23 /* Solana */,
+			);
+			productName = "Silly Slots";
+			productReference = 95151FBB27E2A9A1008ADA23 /* Silly Slots.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95151FB327E2A9A1008ADA23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					95151FBA27E2A9A1008ADA23 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 95151FB627E2A9A1008ADA23 /* Build configuration list for PBXProject "Silly Slots" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95151FB227E2A9A1008ADA23;
+			packageReferences = (
+				95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift" */,
+			);
+			productRefGroup = 95151FBC27E2A9A1008ADA23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95151FBA27E2A9A1008ADA23 /* Silly Slots */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95151FB927E2A9A1008ADA23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95151FCB27E2A9A7008ADA23 /* LaunchScreen.storyboard in Resources */,
+				95151FC827E2A9A7008ADA23 /* Assets.xcassets in Resources */,
+				95151FC627E2A9A1008ADA23 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7459F98D73196529BF4A307E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Silly Slots/Pods-Silly Slots-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Silly Slots/Pods-Silly Slots-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Silly Slots/Pods-Silly Slots-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		964B3FF71B9C292E8EECAB64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Silly Slots-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95151FB727E2A9A1008ADA23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95151FC327E2A9A1008ADA23 /* ViewController.swift in Sources */,
+				95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */,
+				95151FC127E2A9A1008ADA23 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		95151FC427E2A9A1008ADA23 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95151FC527E2A9A1008ADA23 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		95151FC927E2A9A7008ADA23 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95151FCA27E2A9A7008ADA23 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95151FCD27E2A9A7008ADA23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		95151FCE27E2A9A7008ADA23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95151FD027E2A9A7008ADA23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1669697F6732184B0E28C2A /* Pods-Silly Slots.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J8444RS773;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Silly Slots/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Silly-Slots";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95151FD127E2A9A7008ADA23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD43E8A5D2451C958F131CE3 /* Pods-Silly Slots.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J8444RS773;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Silly Slots/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Silly-Slots";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95151FB627E2A9A1008ADA23 /* Build configuration list for PBXProject "Silly Slots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95151FCD27E2A9A7008ADA23 /* Debug */,
+				95151FCE27E2A9A7008ADA23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95151FCF27E2A9A7008ADA23 /* Build configuration list for PBXNativeTarget "Silly Slots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95151FD027E2A9A7008ADA23 /* Debug */,
+				95151FD127E2A9A7008ADA23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/crewshin/solana-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95151FD327E2AF51008ADA23 /* Solana */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift" */;
+			productName = Solana;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 95151FB327E2A9A1008ADA23 /* Project object */;
+}

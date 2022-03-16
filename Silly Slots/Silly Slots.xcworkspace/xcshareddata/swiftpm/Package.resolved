@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Base58Swift",
+        "repositoryURL": "https://github.com/keefertaylor/Base58Swift",
+        "state": {
+          "branch": null,
+          "revision": "1c13ea6b07f1584660526f8bde3d4cc150e91acd",
+          "version": "2.1.14"
+        }
+      },
+      {
+        "package": "BigInt",
+        "repositoryURL": "https://github.com/attaswift/BigInt.git",
+        "state": {
+          "branch": null,
+          "revision": "0ed110f7555c34ff468e72e1686e59721f2b0da6",
+          "version": "5.3.0"
+        }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "12f2389aca4a07e0dd54c86ec23d0721ed88b8db",
+          "version": "1.4.3"
+        }
+      },
+      {
+        "package": "ed25519swift",
+        "repositoryURL": "https://github.com/crewshin/ed25519swift",
+        "state": {
+          "branch": null,
+          "revision": "b14719cad9fa541a5ec9b3de5aff8e9c4cc6ea07",
+          "version": "1.2.6"
+        }
+      },
+      {
+        "package": "Solana",
+        "repositoryURL": "https://github.com/crewshin/solana-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "fbd76e723ba56b57e5b594a68a5d624bc5d87faf",
+          "version": "0.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
