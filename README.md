@@ -123,5 +123,6 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 ### Networking
 - [Add list of network requests by screen ]
 - Login Screen 
+  - (Read/GET)   
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
