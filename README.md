@@ -174,6 +174,10 @@ user.signUpInBackground  { (success, error) in
 
 - Crypto Wallet 
   - (Read/GET) Query all NFTs where user is owner 
+  
+| ParseMethod | Example |
+| ----------- | ------- | 
+| [Query](https://docs.parseplatform.org/ios/guide/#queries-on-string-values)  | Retrieve the NFTS  |
 ```  
 let query = PFQuery(className:"Wallet")
 query.whereKey("owner", equalTo: currentUser)
