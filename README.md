@@ -112,7 +112,7 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 [Add table of models]
 
 | Property | Type | Description |
- --------- | ---- | ----------- |
+| --------- | ---- | ----------- |
 | username |	String | 	Unique user id for the user to spin the slot machine |
 | password |	String |	Unique key to give the user access to their slot machine profile |
 | nftUsername |	String |	The users Near/ Ethereum wallet username |
@@ -124,6 +124,7 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 - [Add list of network requests by screen ]
 - Login Screen 
   - (Read/GET) 
+
 - Crypto Wallet 
   - (Read/GET) Query all NFTs where user is owner 
 ```  
