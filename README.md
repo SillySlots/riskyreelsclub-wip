@@ -110,7 +110,16 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
+| Property | Type | Description |
+| username |	String | 	Unique user id for the user to spin the slot machine |
+| password |	String |	Unique key to give the user access to their slot machine profile |
+| nftUsername |	String |	The users Near/ Ethereum wallet username |
+| nftPass	| String	The users near/ Ethereum key to access their wallet |
+| transferNft	| DateTime	Date when ownership of an NFT is transferred to a new user |
+
+
 ### Networking
 - [Add list of network requests by screen ]
+- Login Screen 
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
