@@ -99,7 +99,8 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
    * ...
 
 ## Wireframes
-![wireframe-sillyslots](https://user-images.githubusercontent.com/98482932/158494876-ae191505-be76-4679-8ed8-7b0c59d559bf.png)
+![wireframe-sillyslots (1)](https://user-images.githubusercontent.com/98482932/158495030-c15c594e-c890-4180-b857-9f0c7045ed27.png)
+
 
 ### [BONUS] Digital Wireframes & Mockups
 
