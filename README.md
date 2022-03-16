@@ -130,11 +130,47 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 | ----------- | ------- | 
 | [Sign up user](https://docs.parseplatform.org/ios/guide/#signing-up)  | Creating a user account |
 
+```
+@IB Action func onSignUp(_sender: Any) {
+let user = PFUser()
+user.username = usernameField.text
+user.password = passwordField.text
+user.email = emailField.text
+
+user.signUpInBackground  { (success, error) in
+	if success {
+		self.performSegue(withIdentifier: "loginSegue",
+			sender: nil)
+	} else {
+		print("Error: \(error?.localizedDescription)")
+
+}
+```
+
 - Log in Screen
 
 | ParseMethod | Example |
 | ----------- | ------- | 
 | [Log in user](https://docs.parseplatform.org/ios/guide/#logging-in)  | Loggin in a user account |
+
+```
+@IB Action func onSignIn(_sender: Any) {
+	let username = usernameField.text!
+	let password = passwordField.text!
+
+	PFUser.logInWithUsername(inBackground.username, 
+		password: password)
+	{ (user, error) in 
+		if user! = nil {
+			self.performSegue(withIdentifier: "loginSegue",
+				sender: nil)
+		} else {
+			print("Error: \(error?.localizedDescription)")
+		}
+	}
+
+}
+```	
 
 
 - Crypto Wallet 
