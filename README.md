@@ -110,6 +110,7 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
+
 | Property | Type | Description |
 | username |	String | 	Unique user id for the user to spin the slot machine |
 | password |	String |	Unique key to give the user access to their slot machine profile |
