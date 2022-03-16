@@ -51,6 +51,7 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 * User login
 * Automatic logout (after swipe up) 
 * View NFT on screen 
+* Access crypto wallet
 * Access NFT Wallet 
 * Settings page
 * Spin the slot machine 
