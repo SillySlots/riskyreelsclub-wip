@@ -53,10 +53,10 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 * View NFT on screen 
 * Access crypto wallet
 * Access NFT Wallet 
+* Has to verify the age of the user BEFORE they can create an account
 * Settings page
 * Spin the slot machine 
 * Have to get something back for winning (crypto)
-* Has to access crypto wallet 
 * Solana compatible 
 * Return a percentage of the winnings back to each NFT holder (daily, monthly, weekly basis)
 * Check if NFTs have been sold/bought by another person 
