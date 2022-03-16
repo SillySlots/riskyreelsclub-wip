@@ -130,6 +130,12 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 | ----------- | ------- | 
 | [Sign up user](https://docs.parseplatform.org/ios/guide/#signing-up)  | Creating a user account |
 
+- Log in Screen
+
+| ParseMethod | Example |
+| ----------- | ------- | 
+| [Log in user](https://docs.parseplatform.org/ios/guide/#logging-in)  | Loggin in a user account |
+
 
 - Crypto Wallet 
   - (Read/GET) Query all NFTs where user is owner 
