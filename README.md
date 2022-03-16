@@ -116,8 +116,8 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 | username |	String | 	Unique user id for the user to spin the slot machine |
 | password |	String |	Unique key to give the user access to their slot machine profile |
 | nftUsername |	String |	The users Near/ Ethereum wallet username |
-| nftPass	| String	The users near/ Ethereum key to access their wallet |
-| transferNft	| DateTime	Date when ownership of an NFT is transferred to a new user |
+| nftPass	| String | The users near/ Ethereum key to access their wallet |
+| transferNft	| DateTime	| Date when ownership of an NFT is transferred to a new user |
 
 
 ### Networking
