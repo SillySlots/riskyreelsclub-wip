@@ -127,6 +127,7 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
   - (Read/GET) 
 
 | Parse Method | Example |
+| ----- ------ | ------- | 
 | [Sign up user](https://docs.parseplatform.org/ios/guide/#signing-up)  | Creating a user account |
 
 
