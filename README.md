@@ -126,7 +126,8 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
   - (Read/GET) 
 - Crypto Wallet 
   - (Read/GET) Query all NFTs where user is owner 
-  let query = PFQuery(className:"Wallet")
+```  
+let query = PFQuery(className:"Wallet")
 query.whereKey("owner", equalTo: currentUser)
 query.order(byDescending: "createdAt")
 query.findObjectsInBackground { (wallet: [PFObject]?, error: Error?) in
@@ -137,7 +138,7 @@ query.findObjectsInBackground { (wallet: [PFObject]?, error: Error?) in
   // TODO: Do something with posts...
    }
 }   
-
+```
 
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
