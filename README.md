@@ -99,8 +99,7 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
    * ...
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+https://ibb.co/xHNszSL
 
 ### [BONUS] Digital Wireframes & Mockups
 
