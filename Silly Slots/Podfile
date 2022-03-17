@@ -7,5 +7,6 @@ target 'Silly Slots' do
 
   # Pods for Silly Slots
 	pod 'AlamofireImage'
+	pod 'Parse'
 
 end
