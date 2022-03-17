@@ -1,19 +1,28 @@
 //
 //  AppDelegate.swift
-//  Silly Slots
+//  Parstagram
 //
-//  Created by Rayven Perkins on 3/16/22.
+//  Created by Rayven Perkins on 3/8/22.
 //
 
 import UIKit
+import Parse
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let parseConfig = ParseClientConfiguration {
+                    $0.applicationId = "2fY257dDqPS82Cy7oyjzZyzWUkpogieDM4RXxRnq" // <- UPDATE
+                    $0.clientKey = "OofqmOCIvaTD4qr5MjB99ISk8Hwi2nTSJ79SZ5kw" // <- UPDATE
+                    $0.server = "https://parseapi.back4app.com"
+            }
+            Parse.initialize(with: parseConfig)
+        
         return true
     }
 
@@ -33,4 +42,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 
