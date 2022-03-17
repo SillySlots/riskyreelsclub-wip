@@ -15,7 +15,15 @@ class FirstScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onSingInButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "signInSegue", sender: nil)
+    }
+    
+    
+    @IBAction func onSignUpButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "signUpSegue", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
