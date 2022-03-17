@@ -14,6 +14,9 @@
 		95151FC827E2A9A7008ADA23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95151FC727E2A9A7008ADA23 /* Assets.xcassets */; };
 		95151FCB27E2A9A7008ADA23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95151FC927E2A9A7008ADA23 /* LaunchScreen.storyboard */; };
 		95151FD427E2AF51008ADA23 /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 95151FD327E2AF51008ADA23 /* Solana */; };
+		95B485E327E2B25B00E648B3 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E227E2B25B00E648B3 /* FirstScreenViewController.swift */; };
+		95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E427E2B29A00E648B3 /* SignInViewController.swift */; };
+		95B485E727E2B2B400E648B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E627E2B2B400E648B3 /* SignUpViewController.swift */; };
 		EB8E68A196CB83ECE15908A9 /* Pods_Silly_Slots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94E814DCE3E13247F541FDA /* Pods_Silly_Slots.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,9 @@
 		95151FC727E2A9A7008ADA23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95151FCA27E2A9A7008ADA23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95151FCC27E2A9A7008ADA23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95B485E227E2B25B00E648B3 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
+		95B485E427E2B29A00E648B3 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		95B485E627E2B2B400E648B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BD43E8A5D2451C958F131CE3 /* Pods-Silly Slots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.release.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.release.xcconfig"; sourceTree = "<group>"; };
 		D1669697F6732184B0E28C2A /* Pods-Silly Slots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.debug.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.debug.xcconfig"; sourceTree = "<group>"; };
 		F94E814DCE3E13247F541FDA /* Pods_Silly_Slots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silly_Slots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +95,9 @@
 				95151FC727E2A9A7008ADA23 /* Assets.xcassets */,
 				95151FC927E2A9A7008ADA23 /* LaunchScreen.storyboard */,
 				95151FCC27E2A9A7008ADA23 /* Info.plist */,
+				95B485E227E2B25B00E648B3 /* FirstScreenViewController.swift */,
+				95B485E427E2B29A00E648B3 /* SignInViewController.swift */,
+				95B485E627E2B2B400E648B3 /* SignUpViewController.swift */,
 			);
 			path = "Silly Slots";
 			sourceTree = "<group>";
@@ -214,8 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B485E727E2B2B400E648B3 /* SignUpViewController.swift in Sources */,
 				95151FC327E2A9A1008ADA23 /* ViewController.swift in Sources */,
+				95B485E327E2B25B00E648B3 /* FirstScreenViewController.swift in Sources */,
 				95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */,
+				95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */,
 				95151FC127E2A9A1008ADA23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
