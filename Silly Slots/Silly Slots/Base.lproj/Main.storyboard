@@ -181,6 +181,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign Up"/>
                                 <connections>
+                                    <action selector="onSignUpButton:" destination="Pbj-gM-W19" eventType="touchUpInside" id="4R9-hi-EdA"/>
                                     <segue destination="eZY-gZ-vol" kind="presentation" identifier="signUpSeque" id="dNf-OK-J4L"/>
                                 </connections>
                             </button>
@@ -190,6 +191,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign In"/>
                                 <connections>
+                                    <action selector="onSignInButton:" destination="Pbj-gM-W19" eventType="touchUpInside" id="sUM-Ho-lR6"/>
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="signInSeque" id="jrC-6A-xWH"/>
                                 </connections>
                             </button>
@@ -199,6 +201,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmk-fj-OfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Pbj-gM-W19" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-46.376811594202906" y="-613.39285714285711"/>
         </scene>
