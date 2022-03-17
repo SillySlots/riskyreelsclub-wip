@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameField2: UITextField!
@@ -21,6 +22,20 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func onSignUp(_ sender: Any) {
+        
+        let user = PFUser()
+        user.username = usernameField2.text
+        user.password = passwordField2.text
+        user.email = emailField.text
+
+        user.signUpInBackground  { (success, error) in
+            if success {
+                self.performSegue(withIdentifier: "loginSegue",
+                    sender: nil)
+            } else {
+                print("Error: \(error?.localizedDescription)")
+
+        
     }
     
 
