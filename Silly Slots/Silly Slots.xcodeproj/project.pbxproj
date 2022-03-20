@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950D09EE27E7DDE100532D47 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D09ED27E7DDE100532D47 /* WalletViewController.swift */; };
+		950D09F027E7DE2900532D47 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D09EF27E7DE2800532D47 /* SettingsViewController.swift */; };
 		95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95151FBE27E2A9A1008ADA23 /* AppDelegate.swift */; };
 		95151FC127E2A9A1008ADA23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95151FC027E2A9A1008ADA23 /* SceneDelegate.swift */; };
 		95151FC327E2A9A1008ADA23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95151FC227E2A9A1008ADA23 /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		950D09ED27E7DDE100532D47 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		950D09EF27E7DE2800532D47 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		95151FBB27E2A9A1008ADA23 /* Silly Slots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silly Slots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95151FBE27E2A9A1008ADA23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95151FC027E2A9A1008ADA23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				95B485E427E2B29A00E648B3 /* SignInViewController.swift */,
 				95B485E627E2B2B400E648B3 /* SignUpViewController.swift */,
 				B994E7CB27E2BC3400159254 /* SlotViewController.swift */,
+				950D09ED27E7DDE100532D47 /* WalletViewController.swift */,
+				950D09EF27E7DE2800532D47 /* SettingsViewController.swift */,
 			);
 			path = "Silly Slots";
 			sourceTree = "<group>";
@@ -231,8 +237,10 @@
 				95151FC327E2A9A1008ADA23 /* ViewController.swift in Sources */,
 				95B485E327E2B25B00E648B3 /* FirstScreenViewController.swift in Sources */,
 				95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */,
+				950D09EE27E7DDE100532D47 /* WalletViewController.swift in Sources */,
 				95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */,
 				95151FC127E2A9A1008ADA23 /* SceneDelegate.swift in Sources */,
+				950D09F027E7DE2900532D47 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
