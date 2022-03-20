@@ -182,7 +182,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignUpButton:" destination="7Bj-mH-Ii3" eventType="touchUpInside" id="GBy-Vq-Lwg"/>
-                                    <segue destination="eZY-gZ-vol" kind="presentation" identifier="signUpSeque" id="dNf-OK-J4L"/>
+                                    <segue destination="eZY-gZ-vol" kind="presentation" identifier="signUpSegue" id="dNf-OK-J4L"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0P-nd-cFD">
@@ -192,7 +192,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign In"/>
                                 <connections>
                                     <action selector="onSingInButton:" destination="7Bj-mH-Ii3" eventType="touchUpInside" id="pSf-aH-EbV"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="signInSeque" id="jrC-6A-xWH"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="signInSegue" id="jrC-6A-xWH"/>
                                 </connections>
                             </button>
                         </subviews>
