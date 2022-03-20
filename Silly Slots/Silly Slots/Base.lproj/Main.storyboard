@@ -49,7 +49,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign In"/>
                                 <connections>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yxa-HR-CbF"/>
-                                    <segue destination="YFU-hZ-Z8c" kind="presentation" identifier="loginSeque" id="Acf-gT-brH"/>
+                                    <segue destination="7UR-Su-vIM" kind="presentation" identifier="loginSegue" id="lc5-PQ-YRR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,78 +65,55 @@
             </objects>
             <point key="canvasLocation" x="-625" y="117"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="eou-HA-8Yo">
+        <!--Item 2-->
+        <scene sceneID="Yqk-Mw-8Zd">
             <objects>
-                <navigationController id="YFU-hZ-Z8c" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KDh-Lz-B0b">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="P25-0d-VpQ" kind="presentation" id="Y8m-yc-XnL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Oq-Vg-1zf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-46" y="846"/>
-        </scene>
-        <!--Wallet View Controller-->
-        <scene sceneID="b6p-vp-9nq">
-            <objects>
-                <viewController id="dmg-4w-c36" customClass="WalletViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8CQ-Dz-Ao1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="JgP-9O-WGX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0XS-2P-vco" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="251" y="1580"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="Ge5-T8-Pbz">
-            <objects>
-                <viewController id="J5j-WN-wHo" customClass="SettingsViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BCb-lT-2io">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="V3m-47-ojA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VGb-JD-8ZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1343" y="1626"/>
-        </scene>
-        <!--Slot View Controller-->
-        <scene sceneID="7Wb-GC-y9G">
-            <objects>
-                <viewController id="P25-0d-VpQ" customClass="SlotViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WVY-OL-h0v">
+                <viewController id="m2b-OT-V3C" customClass="SettingsViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Hp-fY-VF8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dcF-Ai-BBX">
-                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem title="Wallet" id="8cY-A9-H1w"/>
-                                    <tabBarItem title="Slot" id="0L5-Ke-wC5"/>
-                                    <tabBarItem title="Settings" id="ipH-Gx-MUB"/>
-                                </items>
-                            </tabBar>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="oiz-qb-8T6"/>
+                        <viewLayoutGuide key="safeArea" id="0eO-Dd-icP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="NsZ-Gy-t8o"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9lC-2g-sKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lp-uZ-it2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="846"/>
+            <point key="canvasLocation" x="712" y="1594"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="yTE-vz-snW">
+            <objects>
+                <viewController id="dbv-ON-KtV" customClass="WalletViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e2p-Md-SDf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tms-Z4-3oa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="Mi7-Mh-YC4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dT7-O1-KDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-742" y="1594"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Dqc-xO-2cf">
+            <objects>
+                <tabBarController id="7UR-Su-vIM" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VoW-sd-Qnw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dbv-ON-KtV" kind="relationship" relationship="viewControllers" id="z9D-4q-POv"/>
+                        <segue destination="m2b-OT-V3C" kind="relationship" relationship="viewControllers" id="qpD-9D-cgQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqh-jq-1fO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88" y="853"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="VKQ-O3-BWO">
@@ -192,7 +169,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignUp:" destination="eZY-gZ-vol" eventType="touchUpInside" id="cHz-9t-3Tb"/>
-                                    <segue destination="YFU-hZ-Z8c" kind="presentation" identifier="loginSegue2" id="KrJ-d0-TbB"/>
+                                    <segue destination="7UR-Su-vIM" kind="presentation" identifier="loginSegue2" id="cIC-nO-dkW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -248,7 +225,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Acf-gT-brH"/>
+        <segue reference="lc5-PQ-YRR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
