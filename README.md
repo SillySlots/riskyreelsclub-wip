@@ -49,19 +49,19 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 **Required Must-have Stories**
 
 * [x] User login
-* [x] Automatic logout (after swipe up)
-* [x] Has to verify the age of the user BEFORE they can create an account
+* [x] User is automatically logged out (after swipe up)
+* [x] User has to verify the age of the user BEFORE they can create an account
 * [x] Make our own server
-* View NFT on screen 
-* Access crypto wallet
-* Access NFT Wallet 
-* Settings page
-* Spin the slot machine 
-* Have to get something back for winning (crypto)
-* Solana compatible 
-* Return a percentage of the winnings back to each NFT holder (daily, monthly, weekly basis)
-* Check if NFTs have been sold/bought by another person 
-* Read if user is gambling with and NFT or just with crypto (non-holder vs holder)
+* [ ] User can view NFTs on their screen
+* [ ] User can access their crypto wallet
+* [ ] User can access their NFT wallet
+* [ ] User can customize app through settings
+* [ ] User can spin slot machine
+* [ ] User receives something back for winning the slot machine (crypto)
+* [ ] App is solana compatible
+* [ ] A percentage of the winnings are returned back to each NFT holder (daily, monthly, weekly)
+* [ ] App checks if NFTs have been sold/bought by another person
+* [ ] Read if user is gambling with NFTs or just with crypto (non-holder vs holder)
 
 **Optional Nice-to-have Stories**
 
