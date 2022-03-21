@@ -10,7 +10,9 @@ import UIKit
 class FirstScreenViewController: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
 
         // Do any additional setup after loading the view.
     }
