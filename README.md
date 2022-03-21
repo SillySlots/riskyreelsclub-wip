@@ -1,4 +1,4 @@
-Original App Design Project - README Template
+Original App Design Project -
 ===
 
 # Silly Slots
@@ -48,12 +48,13 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 
 **Required Must-have Stories**
 
-* User login
-* Automatic logout (after swipe up) 
+* [x] User login
+* [x] Automatic logout (after swipe up)
+* [x] Has to verify the age of the user BEFORE they can create an account
+* [x] Make our own server
 * View NFT on screen 
 * Access crypto wallet
 * Access NFT Wallet 
-* Has to verify the age of the user BEFORE they can create an account
 * Settings page
 * Spin the slot machine 
 * Have to get something back for winning (crypto)
@@ -61,7 +62,6 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 * Return a percentage of the winnings back to each NFT holder (daily, monthly, weekly basis)
 * Check if NFTs have been sold/bought by another person 
 * Read if user is gambling with and NFT or just with crypto (non-holder vs holder)
-* Make our own server
 
 **Optional Nice-to-have Stories**
 
@@ -195,3 +195,8 @@ query.findObjectsInBackground { (wallet: [PFObject]?, error: Error?) in
 
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+### Milestone 1 gif:
+![milestone1gif](https://user-images.githubusercontent.com/98482932/159284783-cc25cdab-dd4d-46bf-8037-10c6d5cdba97.gif)
+
+
