@@ -74,7 +74,7 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 
 * Login screen 
    * user can log into their NFT/ Crypto wallet
-   * ...
+   * User can log into their account with our platform
 * NFT Wallet
    * User can view current NFTS
    * User can views the current amount of crypto they have
