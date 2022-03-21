@@ -187,7 +187,6 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignUp:" destination="eZY-gZ-vol" eventType="touchUpInside" id="cHz-9t-3Tb"/>
-                                    <segue destination="7UR-Su-vIM" kind="presentation" identifier="loginSegue2" id="cIC-nO-dkW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-zA-H9s">
@@ -212,18 +211,69 @@
                         <outlet property="emailField" destination="hiS-WP-fwn" id="cyS-EZ-OwN"/>
                         <outlet property="passwordField2" destination="ohl-Mx-mO4" id="dKX-uD-FLX"/>
                         <outlet property="usernameField2" destination="Bz6-BQ-Rrt" id="1My-0x-ZpS"/>
+                        <segue destination="7UR-Su-vIM" kind="presentation" identifier="loginSegue2" id="T3V-mL-xfa"/>
+                        <segue destination="83Q-xr-z0e" kind="presentation" identifier="popUpSegue" id="EJP-KJ-TR9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMU-0B-PHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.52173913043481" y="116.51785714285714"/>
+            <point key="canvasLocation" x="435" y="117"/>
+        </scene>
+        <!--Age Pop View Controller-->
+        <scene sceneID="xyb-Jq-fS5">
+            <objects>
+                <viewController id="83Q-xr-z0e" customClass="AgePopViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3LA-dg-Yyn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xXB-i4-iWf">
+                                <rect key="frame" x="40" y="183" width="335" height="530"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ooops..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xx3-yd-Uw7">
+                                        <rect key="frame" x="8" y="109" width="213" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="58"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You current do not meet the requirements for this app. Please try again later." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-fq-jX2">
+                                        <rect key="frame" x="8" y="166" width="318" height="198"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBT-TV-wQv">
+                                        <rect key="frame" x="227" y="456" width="92" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Dismiss"/>
+                                        <connections>
+                                            <action selector="onDismiss:" destination="83Q-xr-z0e" eventType="touchUpInside" id="Di3-gk-aVF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vaC-cf-p0N"/>
+                    </view>
+                    <connections>
+                        <segue destination="7Bj-mH-Ii3" kind="show" identifier="backToBegin" id="S9u-Wy-POm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwW-Gc-Qr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="117"/>
         </scene>
         <!--First Screen View Controller-->
         <scene sceneID="l6m-Qi-cPr">
             <objects>
                 <viewController id="7Bj-mH-Ii3" customClass="FirstScreenViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vJr-mY-Z5R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vb5-bV-TWH">
@@ -250,6 +300,7 @@
                         <viewLayoutGuide key="safeArea" id="EaP-Xf-bmu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Zo8-ce-Tjh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmk-fj-OfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,11 +308,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cIC-nO-dkW"/>
+        <segue reference="T3V-mL-xfa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

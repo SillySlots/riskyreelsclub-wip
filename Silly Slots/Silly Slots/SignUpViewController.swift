@@ -35,6 +35,8 @@ class SignUpViewController: UIViewController {
         if(ageInt < 18) {
             print("ERROR: you may not sign up for an account")
             
+            self.performSegue(withIdentifier: "popUpSegue", sender: nil)
+            
             //fix this so that no segue is performed if the age is below
             
         } else {
