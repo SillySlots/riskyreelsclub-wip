@@ -1,4 +1,4 @@
-Original App Design Project - README Template
+Original App Design Project -
 ===
 
 # Silly Slots
@@ -195,3 +195,8 @@ query.findObjectsInBackground { (wallet: [PFObject]?, error: Error?) in
 
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+### Milestone 1 gif:
+![milestone1gif](https://user-images.githubusercontent.com/98482932/159284783-cc25cdab-dd4d-46bf-8037-10c6d5cdba97.gif)
+
+
