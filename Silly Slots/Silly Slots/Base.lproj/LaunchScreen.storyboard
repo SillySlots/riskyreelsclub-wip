@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qY-za-Tt5">
-                                <rect key="frame" x="51" y="288" width="313" height="321"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_reducedsize" translatesAutoresizingMaskIntoConstraints="NO" id="jOX-we-fd5">
+                                <rect key="frame" x="57" y="291" width="301" height="315"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5qY-za-Tt5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="244" id="3T2-Py-yTC"/>
-                            <constraint firstItem="5qY-za-Tt5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="QKO-ns-t0j"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5qY-za-Tt5" secondAttribute="bottom" constant="253" id="p07-Tv-8KZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5qY-za-Tt5" secondAttribute="trailing" constant="50" id="qId-fx-mxc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jOX-we-fd5" secondAttribute="bottom" constant="256" id="9Px-qn-Qeu"/>
+                            <constraint firstItem="jOX-we-fd5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="247" id="Qd7-R9-qAr"/>
+                            <constraint firstItem="jOX-we-fd5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="bOb-Jq-s6t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jOX-we-fd5" secondAttribute="trailing" constant="56" id="gok-9f-cJd"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,7 +36,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="3000" height="3000"/>
+        <image name="icon_reducedsize" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
