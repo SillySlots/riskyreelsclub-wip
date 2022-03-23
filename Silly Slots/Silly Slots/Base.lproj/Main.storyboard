@@ -304,7 +304,7 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="signInSegue" id="jrC-6A-xWH"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmb-aX-AcN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="xmb-aX-AcN">
                                 <rect key="frame" x="97" y="164" width="221" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -323,6 +323,7 @@
         <segue reference="T3V-mL-xfa"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="icon" width="3000" height="3000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
