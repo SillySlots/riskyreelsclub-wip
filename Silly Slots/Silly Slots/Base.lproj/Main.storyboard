@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="-88" y="1576"/>
         </scene>
-        <!--View Controller-->
+        <!--Wallet View Controller-->
         <scene sceneID="Lei-4e-7a6">
             <objects>
-                <viewController id="1JX-A6-HDu" sceneMemberID="viewController">
+                <viewController id="1JX-A6-HDu" customClass="WalletViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvM-Oh-YNY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

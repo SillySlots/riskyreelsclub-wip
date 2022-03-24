@@ -2,10 +2,11 @@
 //  WalletViewController.swift
 //  Silly Slots
 //
-//  Created by Rayven Perkins on 3/20/22.
+//  Created by Rayven Perkins on 3/23/22.
 //
 
 import UIKit
+import EtherWalletKit
 
 class WalletViewController: UIViewController {
 
