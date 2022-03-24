@@ -121,7 +121,7 @@
                     <connections>
                         <outlet property="resultLabel" destination="mXA-Qp-VVw" id="edu-N3-WUg"/>
                         <outlet property="slotButton" destination="KBx-20-7yN" id="Hwc-cx-eGS"/>
-                        <outlet property="slotPickerView" destination="vz2-Lr-tIS" id="zec-kk-CnT"/>
+                        <outlet property="slotPickerView" destination="vz2-Lr-tIS" id="Zae-x9-dGd"/>
                         <outlet property="spinButton" destination="KBx-20-7yN" id="FqO-76-o4l"/>
                     </connections>
                 </viewController>
@@ -445,7 +445,7 @@
         <segue reference="T3V-mL-xfa"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="altbackground" width="960" height="540"/>
+        <image name="altbackground" width="1400" height="2000"/>
         <image name="text" width="1400" height="2000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -6,11 +6,22 @@
 //
 
 import UIKit
+import Parse
 
-
-class SlotMachineViewController: UIViewController {
+class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+   
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        <#code#>
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        <#code#>
+    }
+    
 
     var winFlagbool = false
+    var reelImage = [PFObject]()
+    var selectedPost: PFObject!
     
     @IBOutlet weak var spinButton: UIButton!
     
@@ -20,14 +31,14 @@ class SlotMachineViewController: UIViewController {
  
     var bounds    = CGRect.zero
     var dataArray = [[Int](), [Int](), [Int]()]
-    var winSound  = SoundManager()
-    var rattle    = SoundManager()
+//    var winSound  = SoundManager()
+//    var rattle    = SoundManager()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerView.delegate   = self
-        pickerView.dataSource = self
+        slotPickerView.delegate   = self
+        slotPickerView.dataSource = self
         loadData()
         setupUIAndSound()
         spinSlots()
@@ -44,10 +55,7 @@ class SlotMachineViewController: UIViewController {
     
     func setupUIAndSound() {
         // SOUND
-        winSound.setupPlayer(soundName: K.sound, soundType: SoundType.m4a)
-        rattle.setupPlayer(soundName: K.rattle, soundType: .m4a)
-        winSound.volume(1.0)
-        rattle.volume(0.1)
+       
         spinButton.alpha = 0
         
         // UI
@@ -55,17 +63,17 @@ class SlotMachineViewController: UIViewController {
         setTrim()
         resultLabel.layer.cornerRadius  = 10
         resultLabel.layer.masksToBounds = true
-        pickerView.layer.cornerRadius   = 10
+        slotPickerView.layer.cornerRadius   = 10
         spinButton.layer.cornerRadius   = 40
     }
     
     func setTrim () {
         resultLabel.layer.borderColor = UIColor.label.cgColor
-        pickerView.layer.borderColor  = UIColor.label.cgColor
+        slotPickerView.layer.borderColor  = UIColor.label.cgColor
         spinButton.layer.borderColor  = UIColor.label.cgColor
         
         resultLabel.layer.borderWidth = 2
-        pickerView.layer.borderWidth  = 2
+        slotPickerView.layer.borderWidth  = 2
         spinButton.layer.borderWidth  = 2
     }
     
@@ -79,7 +87,7 @@ class SlotMachineViewController: UIViewController {
     
     func spinSlots() {
         for i in 0...2 {
-            pickerView.selectRow(Int.random(in: 3...97), inComponent: i, animated: true)
+            slotPickerView.selectRow(Int.random(in: 3...97), inComponent: i, animated: true)
         }
     }
     
@@ -95,8 +103,7 @@ class SlotMachineViewController: UIViewController {
 
     
     @IBAction func onSpin(_ sender: Any) {
-        winSound.pause()
-        rattle.play()
+       
         spinSlots()
         checkWinOrLose()
         animateButton()
@@ -104,16 +111,16 @@ class SlotMachineViewController: UIViewController {
     
    
     func checkWinOrLose() {
-        let emoji0 = pickerView.selectedRow(inComponent: 0)
-        let emoji1 = pickerView.selectedRow(inComponent: 1)
-        let emoji2 = pickerView.selectedRow(inComponent: 2)
-        let emoji3 = pickerView.selectedRow(inComponent: 3)
+        let emoji0 = slotPickerView.selectedRow(inComponent: 0)
+        let emoji1 = slotPickerView.selectedRow(inComponent: 1)
+        let emoji2 = slotPickerView.selectedRow(inComponent: 2)
+        let emoji3 = slotPickerView.selectedRow(inComponent: 3)
         
 
         if (dataArray[0][emoji0] == dataArray[1][emoji1]
          && dataArray[1][emoji1] == dataArray[2][emoji2] && dataArray[2][emoji2] == dataArray[3][emoji3]) {
             resultLabel.text = K.win
-            winSound.play()
+           
         } else {
             resultLabel.text = K.lose
         }
@@ -135,33 +142,33 @@ class SlotMachineViewController: UIViewController {
 } // end of View Controller
 
 
-// MARK:UIPickerViewDataSource
+// MARK:UIslotPickerViewDataSource
 extension ViewController : UIPickerViewDelegate {
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func slotPickerView(_ slotPickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 100
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in slotPickerView: UIPickerView) -> Int {
         return 4
     }
 }
 
-// MARK:UIPickerViewDelegate
+// MARK:UIslotPickerViewDelegate
 extension ViewController: UIPickerViewDataSource {
     
     
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+    func slotPickerView(_ slotPickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return 83.5
     }
     
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    func slotPickerView(_ slotPickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 120.0
     }
     
     
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    func slotPickerView(_ slotPickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         let pickerLabel = UILabel()
         
