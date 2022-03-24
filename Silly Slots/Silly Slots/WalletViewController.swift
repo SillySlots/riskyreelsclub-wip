@@ -6,7 +6,9 @@
 //
 
 import UIKit
-import EtherWalletKit
+//import EtherWalletKit
+import web3swift
+
 
 class WalletViewController: UIViewController {
     
@@ -31,7 +33,11 @@ class WalletViewController: UIViewController {
         
         if(firstPassword == confirmPassword) {
             let password = firstPassword
-            try? EtherWallet.account.generateAccount(password: password)
+            do {
+             let keystore = try EthereumKeystoreV3.init(password: password)
+             } catch {
+             print(error.localizedDescription)
+             }
         }
         // Generate a new account with its new password.
 
@@ -54,7 +60,6 @@ class WalletViewController: UIViewController {
         
         
         
-        let password = ethPasswordField.text!
         //try? EtherWallet.account.importAccount(privateKey: "1dcbc1d6e0a4587a3a9095984cf051a1bc6ed975f15380a0ac97f01c0c045062, password: password)
             
             

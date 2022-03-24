@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09B7BC3B6B1ADCB87C3B5A8B /* Pods_Silly_Slots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9EB0838ACD8D18E59123A7 /* Pods_Silly_Slots.framework */; };
 		950D09F027E7DE2900532D47 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D09EF27E7DE2800532D47 /* SettingsViewController.swift */; };
 		95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95151FBE27E2A9A1008ADA23 /* AppDelegate.swift */; };
 		95151FC127E2A9A1008ADA23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95151FC027E2A9A1008ADA23 /* SceneDelegate.swift */; };
@@ -15,6 +16,7 @@
 		95151FC827E2A9A7008ADA23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95151FC727E2A9A7008ADA23 /* Assets.xcassets */; };
 		95151FCB27E2A9A7008ADA23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95151FC927E2A9A7008ADA23 /* LaunchScreen.storyboard */; };
 		95151FD427E2AF51008ADA23 /* Solana in Frameworks */ = {isa = PBXBuildFile; productRef = 95151FD327E2AF51008ADA23 /* Solana */; };
+		9543BE5E27ECBDE200EA0C54 /* web3.swift in Frameworks */ = {isa = PBXBuildFile; productRef = 9543BE5D27ECBDE200EA0C54 /* web3.swift */; };
 		9586CDCB27EBF64300D86C33 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9586CDCA27EBF64300D86C33 /* WalletViewController.swift */; };
 		95B485E327E2B25B00E648B3 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E227E2B25B00E648B3 /* FirstScreenViewController.swift */; };
 		95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E427E2B29A00E648B3 /* SignInViewController.swift */; };
@@ -22,10 +24,10 @@
 		95FA5D6027E8BECC00C421A8 /* AgePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA5D5F27E8BECC00C421A8 /* AgePopViewController.swift */; };
 		B95AC79D27EC2FCB00209585 /* SlotMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */; };
 		B994E7CC27E2BC3400159254 /* SlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B994E7CB27E2BC3400159254 /* SlotViewController.swift */; };
-		EB8E68A196CB83ECE15908A9 /* Pods_Silly_Slots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94E814DCE3E13247F541FDA /* Pods_Silly_Slots.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B295712B9BD9AAFF85AC5F3 /* Pods-Silly Slots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.debug.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.debug.xcconfig"; sourceTree = "<group>"; };
 		950D09EF27E7DE2800532D47 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		95151FBB27E2A9A1008ADA23 /* Silly Slots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silly Slots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95151FBE27E2A9A1008ADA23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,9 +44,8 @@
 		95FA5D5F27E8BECC00C421A8 /* AgePopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgePopViewController.swift; sourceTree = "<group>"; };
 		B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineViewController.swift; sourceTree = "<group>"; };
 		B994E7CB27E2BC3400159254 /* SlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotViewController.swift; sourceTree = "<group>"; };
-		BD43E8A5D2451C958F131CE3 /* Pods-Silly Slots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.release.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.release.xcconfig"; sourceTree = "<group>"; };
-		D1669697F6732184B0E28C2A /* Pods-Silly Slots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.debug.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.debug.xcconfig"; sourceTree = "<group>"; };
-		F94E814DCE3E13247F541FDA /* Pods_Silly_Slots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silly_Slots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9EB0838ACD8D18E59123A7 /* Pods_Silly_Slots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silly_Slots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F67BA5F2AA058A70AF7469CE /* Pods-Silly Slots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.release.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,26 +54,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				95151FD427E2AF51008ADA23 /* Solana in Frameworks */,
-				EB8E68A196CB83ECE15908A9 /* Pods_Silly_Slots.framework in Frameworks */,
+				9543BE5E27ECBDE200EA0C54 /* web3.swift in Frameworks */,
+				09B7BC3B6B1ADCB87C3B5A8B /* Pods_Silly_Slots.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A6769A03902D1EFF4C0BC4E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F94E814DCE3E13247F541FDA /* Pods_Silly_Slots.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		715339F9CEE7BE74552BD00C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D1669697F6732184B0E28C2A /* Pods-Silly Slots.debug.xcconfig */,
-				BD43E8A5D2451C958F131CE3 /* Pods-Silly Slots.release.xcconfig */,
+				8B295712B9BD9AAFF85AC5F3 /* Pods-Silly Slots.debug.xcconfig */,
+				F67BA5F2AA058A70AF7469CE /* Pods-Silly Slots.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -83,7 +77,7 @@
 				95151FBD27E2A9A1008ADA23 /* Silly Slots */,
 				95151FBC27E2A9A1008ADA23 /* Products */,
 				715339F9CEE7BE74552BD00C /* Pods */,
-				0A6769A03902D1EFF4C0BC4E /* Frameworks */,
+				E04FE077DAC5F38E0BF6CA65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +111,14 @@
 			path = "Silly Slots";
 			sourceTree = "<group>";
 		};
+		E04FE077DAC5F38E0BF6CA65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB9EB0838ACD8D18E59123A7 /* Pods_Silly_Slots.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,11 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95151FCF27E2A9A7008ADA23 /* Build configuration list for PBXNativeTarget "Silly Slots" */;
 			buildPhases = (
-				964B3FF71B9C292E8EECAB64 /* [CP] Check Pods Manifest.lock */,
+				C1FA4A5F282519D768D71456 /* [CP] Check Pods Manifest.lock */,
 				95151FB727E2A9A1008ADA23 /* Sources */,
 				95151FB827E2A9A1008ADA23 /* Frameworks */,
 				95151FB927E2A9A1008ADA23 /* Resources */,
-				7459F98D73196529BF4A307E /* [CP] Embed Pods Frameworks */,
+				B1081C315F88805029B2D417 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +139,7 @@
 			name = "Silly Slots";
 			packageProductDependencies = (
 				95151FD327E2AF51008ADA23 /* Solana */,
+				9543BE5D27ECBDE200EA0C54 /* web3.swift */,
 			);
 			productName = "Silly Slots";
 			productReference = 95151FBB27E2A9A1008ADA23 /* Silly Slots.app */;
@@ -167,7 +170,8 @@
 			);
 			mainGroup = 95151FB227E2A9A1008ADA23;
 			packageReferences = (
-				95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift" */,
+				95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift.git" */,
+				9543BE5C27ECBDE200EA0C54 /* XCRemoteSwiftPackageReference "web3.swift" */,
 			);
 			productRefGroup = 95151FBC27E2A9A1008ADA23 /* Products */;
 			projectDirPath = "";
@@ -192,7 +196,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7459F98D73196529BF4A307E /* [CP] Embed Pods Frameworks */ = {
+		B1081C315F88805029B2D417 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,7 +213,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Silly Slots/Pods-Silly Slots-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		964B3FF71B9C292E8EECAB64 /* [CP] Check Pods Manifest.lock */ = {
+		C1FA4A5F282519D768D71456 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,7 +396,7 @@
 		};
 		95151FD027E2A9A7008ADA23 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1669697F6732184B0E28C2A /* Pods-Silly Slots.debug.xcconfig */;
+			baseConfigurationReference = 8B295712B9BD9AAFF85AC5F3 /* Pods-Silly Slots.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -421,7 +425,7 @@
 		};
 		95151FD127E2A9A7008ADA23 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD43E8A5D2451C958F131CE3 /* Pods-Silly Slots.release.xcconfig */;
+			baseConfigurationReference = F67BA5F2AA058A70AF7469CE /* Pods-Silly Slots.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,7 +476,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift" */ = {
+		95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/crewshin/solana-swift.git";
 			requirement = {
@@ -480,13 +484,26 @@
 				minimumVersion = 0.0.3;
 			};
 		};
+		9543BE5C27ECBDE200EA0C54 /* XCRemoteSwiftPackageReference "web3.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/argentlabs/web3.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		95151FD327E2AF51008ADA23 /* Solana */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift" */;
+			package = 95151FD227E2AF51008ADA23 /* XCRemoteSwiftPackageReference "solana-swift.git" */;
 			productName = Solana;
+		};
+		9543BE5D27ECBDE200EA0C54 /* web3.swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9543BE5C27ECBDE200EA0C54 /* XCRemoteSwiftPackageReference "web3.swift" */;
+			productName = web3.swift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

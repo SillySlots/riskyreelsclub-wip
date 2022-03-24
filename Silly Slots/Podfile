@@ -4,11 +4,12 @@
 target 'Silly Slots' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  use_modular_headers!
 
   # Pods for Silly Slots
 	pod 'AlamofireImage'
 	pod 'Parse'
-	pod 'EtherWalletKit'
+	pod 'BigInt', '~> 5.2'
 	pod 'web3swift'
 
 end
