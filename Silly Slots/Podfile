@@ -9,5 +9,6 @@ target 'Silly Slots' do
 	pod 'AlamofireImage'
 	pod 'Parse'
 	pod 'EtherWalletKit'
+	pod 'web3swift'
 
 end
