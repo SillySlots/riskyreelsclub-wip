@@ -68,18 +68,66 @@
         <!--Slots-->
         <scene sceneID="Yqk-Mw-8Zd">
             <objects>
-                <viewController id="m2b-OT-V3C" customClass="SlotViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m2b-OT-V3C" customClass="SlotMachineViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Hp-fY-VF8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" image="altbackground" translatesAutoresizingMaskIntoConstraints="NO" id="FGr-0W-eky">
+                                <rect key="frame" x="-13" y="-36" width="448" height="935"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-20-7yN">
+                                <rect key="frame" x="123" y="665" width="168" height="74"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="S P I N">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="50"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onSpin:" destination="m2b-OT-V3C" eventType="touchUpInside" id="NMh-Ts-EJm"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz2-Lr-tIS">
+                                <rect key="frame" x="40" y="130" width="334" height="538"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="538" id="IBf-1I-Gbs"/>
+                                </constraints>
+                            </pickerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="text" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-A7-qsd">
+                                <rect key="frame" x="-13" y="0.0" width="120" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="W I N " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-Qp-VVw">
+                                <rect key="frame" x="143" y="63" width="129" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0eO-Dd-icP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0eO-Dd-icP" firstAttribute="bottom" secondItem="KBx-20-7yN" secondAttribute="bottom" constant="20" id="Fo4-QV-g7u"/>
+                            <constraint firstItem="0eO-Dd-icP" firstAttribute="trailing" secondItem="KBx-20-7yN" secondAttribute="trailing" constant="123" id="Qoz-mq-vbB"/>
+                            <constraint firstItem="vz2-Lr-tIS" firstAttribute="leading" secondItem="0eO-Dd-icP" secondAttribute="leading" constant="40" id="T7J-a1-Qwn"/>
+                            <constraint firstItem="KBx-20-7yN" firstAttribute="leading" secondItem="0eO-Dd-icP" secondAttribute="leading" constant="123" id="adC-oP-UyZ"/>
+                            <constraint firstItem="0eO-Dd-icP" firstAttribute="trailing" secondItem="vz2-Lr-tIS" secondAttribute="trailing" constant="40" id="j6e-s1-08b"/>
+                            <constraint firstItem="vz2-Lr-tIS" firstAttribute="top" secondItem="0eO-Dd-icP" secondAttribute="top" constant="130" id="u46-K2-m23"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Slots" id="NsZ-Gy-t8o"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="mXA-Qp-VVw" id="edu-N3-WUg"/>
+                        <outlet property="slotButton" destination="KBx-20-7yN" id="Hwc-cx-eGS"/>
+                        <outlet property="slotPickerView" destination="vz2-Lr-tIS" id="zec-kk-CnT"/>
+                        <outlet property="spinButton" destination="KBx-20-7yN" id="FqO-76-o4l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lp-uZ-it2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88" y="1576"/>
+            <point key="canvasLocation" x="-88.405797101449281" y="1575.6696428571429"/>
         </scene>
         <!--Wallet View Controller-->
         <scene sceneID="Lei-4e-7a6">
@@ -380,9 +428,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lc5-PQ-YRR"/>
+        <segue reference="T3V-mL-xfa"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="altbackground" width="960" height="540"/>
         <image name="text" width="1400" height="2000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
