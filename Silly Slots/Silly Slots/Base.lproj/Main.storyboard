@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="-88" y="1576"/>
         </scene>
-        <!--Wallet View Controller-->
+        <!--View Controller-->
         <scene sceneID="Lei-4e-7a6">
             <objects>
-                <viewController id="1JX-A6-HDu" customClass="WalletViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1JX-A6-HDu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvM-Oh-YNY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,6 +136,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Sign In"/>
                                 <connections>
+                                    <action selector="ethSignIn:" destination="dbv-ON-KtV" eventType="touchUpInside" id="y5S-u4-cPb"/>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U3n-8V-tPM"/>
                                     <segue destination="1JX-A6-HDu" kind="presentation" id="Tye-p6-7gH"/>
                                 </connections>
@@ -147,11 +148,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoZ-PY-0Eg">
+                                <rect key="frame" x="127" y="516" width="75" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Sign Up"/>
+                                <connections>
+                                    <action selector="ethSignUp:" destination="dbv-ON-KtV" eventType="touchUpInside" id="PkK-ye-nrF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tms-Z4-3oa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Wallet" id="Mi7-Mh-YC4"/>
+                    <connections>
+                        <outlet property="ethPasswordField" destination="Q9C-VO-Zkm" id="y5A-Ei-EwK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dT7-O1-KDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
