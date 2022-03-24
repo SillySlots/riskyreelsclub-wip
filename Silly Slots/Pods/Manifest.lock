@@ -2,29 +2,69 @@ PODS:
   - Alamofire (5.5.0)
   - AlamofireImage (4.2.0):
     - Alamofire (~> 5.4)
+  - BigInt (5.2.0)
   - Bolts/Tasks (1.9.1)
+  - CryptoSwift (1.4.3)
+  - EtherWalletKit (0.1.4):
+    - SwiftKeychainWrapper
+    - web3swift (~> 2.0)
   - Parse (1.19.3):
     - Parse/Core (= 1.19.3)
   - Parse/Core (1.19.3):
     - Bolts/Tasks (= 1.9.1)
+  - PromiseKit (6.15.3):
+    - PromiseKit/CorePromise (= 6.15.3)
+    - PromiseKit/Foundation (= 6.15.3)
+    - PromiseKit/UIKit (= 6.15.3)
+  - PromiseKit/CorePromise (6.15.3)
+  - PromiseKit/Foundation (6.15.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.15.3):
+    - PromiseKit/CorePromise
+  - secp256k1.c (0.1.2)
+  - Starscream (4.0.4)
+  - SwiftKeychainWrapper (4.0.1)
+  - web3swift (2.5.0):
+    - BigInt (~> 5.2.0)
+    - CryptoSwift (~> 1.4.2)
+    - PromiseKit (~> 6.15.3)
+    - secp256k1.c (~> 0.1)
+    - Starscream (~> 4.0.4)
 
 DEPENDENCIES:
   - AlamofireImage
+  - EtherWalletKit
   - Parse
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - BigInt
     - Bolts
+    - CryptoSwift
+    - EtherWalletKit
     - Parse
+    - PromiseKit
+    - secp256k1.c
+    - Starscream
+    - SwiftKeychainWrapper
+    - web3swift
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
+  BigInt: f668a80089607f521586bbe29513d708491ef2f7
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
+  EtherWalletKit: fc2da258feb1287d87149aa2373cca934b2db530
   Parse: 0abb63a0ff6fa34a3f64b81d595a294e2ece143a
+  PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
+  secp256k1.c: db47b726585d80f027423682eb369729e61b3b20
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+  web3swift: 31ecb7a7da543f851344cdd64badea94c439b0d9
 
-PODFILE CHECKSUM: 988e36e19d11a26d0bc26d5215faf55b7de25592
+PODFILE CHECKSUM: 114336051daa8808bb0750586b01b6748cac0e56
 
 COCOAPODS: 1.11.2
