@@ -11,11 +11,11 @@ import web3swift
 
 
 class WalletViewController: UIViewController {
+
     
     @IBOutlet weak var firstPasswordField: UITextField!
     
     @IBOutlet weak var confirmPasswordField: UITextField!
-    
     
     
     
@@ -38,10 +38,12 @@ class WalletViewController: UIViewController {
              } catch {
              print(error.localizedDescription)
              }
-        }
+            
+            
+    
         // Generate a new account with its new password.
 
-        
+        }
     }
     
     @IBAction func ethSignUp(_ sender: Any) {
@@ -54,15 +56,31 @@ class WalletViewController: UIViewController {
         if(firstPassword == confirmPassword) {
             let password = firstPassword
             
-            // perform a segue, popup for the privat key
+            
+            let mnemonic = try! BIP39.generateMnemonics(bitsOfEntropy: 128)!
+             let keystore = try! (BIP32Keystore(mnemonics: mnemonic, password: password, mnemonicsPassword: ""))
+            
+            do{
+           let userDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let keystoreManager = KeystoreManager.managerForPath(userDir + "\(keystore)")
+           var ks: BIP32Keystore?
+           if (keystoreManager?.addresses?.count == 0) {
+           let mnemonic = try! BIP39.generateMnemonics(bitsOfEntropy: 256)!
+           let keystore = try! (BIP32Keystore(mnemonics: mnemonic, password: password, mnemonicsPassword: ""))
+           ks = keystore
+           let keydata = try JSONEncoder().encode(ks?.keystoreParams)
+               
+               FileManager.default.createFile(atPath: userDir + "\(keystore)" , contents: keydata, attributes: nil)
+           } else {
+           ks = keystoreManager?.walletForAddress((keystoreManager?.addresses! [0])!) as? BIP32Keystore
+           }
+                guard let myaddress = ks?.addresses?.first else {return}; print(myaddress.address)
+           }catch{
+           print(error.localizedDescription)
+           }
+            
+            
         }
-        //privateKey = the weird long thing u copy
-        
-        
-        
-        //try? EtherWallet.account.importAccount(privateKey: "1dcbc1d6e0a4587a3a9095984cf051a1bc6ed975f15380a0ac97f01c0c045062, password: password)
-            
-            
             
     }
     
