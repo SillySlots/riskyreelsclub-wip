@@ -17,8 +17,25 @@ class WalletViewController: UIViewController {
     
     @IBOutlet weak var confirmPasswordField: UITextField!
     
+    struct Wallet {
+        let address: String
+        let data: Data
+        let name: String
+        let isHD: Bool
+    }
+
+    struct HDKey {
+        let name: String?
+        let address: String
     
+    }
     
+//    class ERC20Token {
+//        var name: String
+//        var address: String
+//        var decimals: String
+//        var symbol: String
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +51,7 @@ class WalletViewController: UIViewController {
         if(firstPassword == confirmPassword) {
             let password = firstPassword
             
-
+            //create account with private key
             let keystore = try! EthereumKeystoreV3(password: password)!
             let name = "New Wallet"
             let keyData = try! JSONEncoder().encode(keystore.keystoreParams)
