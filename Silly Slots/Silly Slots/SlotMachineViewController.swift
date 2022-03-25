@@ -33,14 +33,16 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
  
     var bounds    = CGRect.zero
     var dataArray = [[PFObject](), [PFObject](), [PFObject](),  [PFObject](),  [PFObject]()]
+    
+    
     var rug = (reelImage["rug"] as? [PFObject]) ?? []
     var ape = (reelImage["ape"] as? [PFObject]) ?? []
-    var dollar = (reelImage["dollar"] as? [PFObject]) ?? []
-    var banana = (reelImage["banana"] as? [PFObject]) ?? []
-    var w = (reelImage["w"] as? [PFObject]) ?? []
-    var m = (reelImage["m"] as? [PFObject]) ?? []
-    var g = (reelImage["i"] as? [PFObject]) ?? []
-    var g = (reelImage["g"] as? [PFObject]) ?? []
+    var dollar = (reelImage["dollarsigns"] as? [PFObject]) ?? []
+    var banana = (reelImage["bananas"] as? [PFObject]) ?? []
+    var w = (reelImage["wsymbol"] as? [PFObject]) ?? []
+    var m = (reelImage["msymbol"] as? [PFObject]) ?? []
+    var g = (reelImage["isymbol"] as? [PFObject]) ?? []
+    var g = (reelImage["gsymbol"] as? [PFObject]) ?? []
 //    var winSound  = SoundManager()
 //    var rattle    = SoundManager()
 
