@@ -54,6 +54,11 @@ class WalletViewController: UIViewController {
         if(firstPassword == confirmPassword) {
             let password = firstPassword
             
+            
+            let mnemonic = try! BIP39.generateMnemonics(bitsOfEntropy: 128)!
+             let keystore = try! (BIP32Keystore(mnemonics: mnemonic, password: password, mnemonicsPassword: ""))
+            
+            
             // perform a segue, popup for the privat key
         }
         //privateKey = the weird long thing u copy
