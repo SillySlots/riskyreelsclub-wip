@@ -33,15 +33,23 @@ class WalletViewController: UIViewController {
         
         if(firstPassword == confirmPassword) {
             let password = firstPassword
-            do {
-            let keystore = try EthereumKeystoreV3.init(password: password)
+            
+
+            let keystore = try! EthereumKeystoreV3(password: password)!
+            let name = "New Wallet"
+            let keyData = try! JSONEncoder().encode(keystore.keystoreParams)
+            let address = keystore.addresses!.first!.address
+            let wallet = Wallet(address: address, data: keyData, name: name, isHD: false)
+            
                 
-                self.performSegue(withIdentifier: "actualWalletSegue", sender: nil)
-             } catch {
-            // print(error.localizedDescription)
-                 
-                 print("something went wrong")
-             }
+//            let keystore = try EthereumKeystoreV3.init(password: password)
+//
+//                self.performSegue(withIdentifier: "actualWalletSegue", sender: nil)
+//             } catch {
+//            // print(error.localizedDescription)
+//
+//                 print("something went wrong")
+//             }
             
             
     
@@ -60,30 +68,8 @@ class WalletViewController: UIViewController {
         if(firstPassword == confirmPassword) {
             let password = firstPassword
             
-            
-            let mnemonic = try! BIP39.generateMnemonics(bitsOfEntropy: 128)!
-             let keystore = try! (BIP32Keystore(mnemonics: mnemonic, password: password, mnemonicsPassword: ""))
-            
-            do{
-           let userDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let keystoreManager = KeystoreManager.managerForPath(userDir + "\(keystore)")
-           var ks: BIP32Keystore?
-           if (keystoreManager?.addresses?.count == 0) {
-           let mnemonic = try! BIP39.generateMnemonics(bitsOfEntropy: 256)!
-           let keystore = try! (BIP32Keystore(mnemonics: mnemonic, password: password, mnemonicsPassword: ""))
-           ks = keystore
-           let keydata = try JSONEncoder().encode(ks?.keystoreParams)
-               
-               FileManager.default.createFile(atPath: userDir + "\(keystore)" , contents: keydata, attributes: nil)
-           } else {
-           ks = keystoreManager?.walletForAddress((keystoreManager?.addresses! [0])!) as? BIP32Keystore
-           }
-                guard let myaddress = ks?.addresses?.first else {return}; print(myaddress.address)
-           }catch{
-           print(error.localizedDescription)
-           }
-            
-            
+        
+    
         }
             
     }
