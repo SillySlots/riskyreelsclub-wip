@@ -6,15 +6,14 @@
 //
 
 import UIKit
-import web3swift
+//import web3swift
 
 class ActualWalletViewController: UIViewController {
 
-    @IBOutlet weak var balanceField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        displayBalance()
+       // displayBalance()
 
         // Do any additional setup after loading the view.
     }

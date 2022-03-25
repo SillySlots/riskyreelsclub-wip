@@ -34,9 +34,13 @@ class WalletViewController: UIViewController {
         if(firstPassword == confirmPassword) {
             let password = firstPassword
             do {
-             let keystore = try EthereumKeystoreV3.init(password: password)
+            let keystore = try EthereumKeystoreV3.init(password: password)
+                
+                self.performSegue(withIdentifier: "actualWalletSegue", sender: nil)
              } catch {
-             print(error.localizedDescription)
+            // print(error.localizedDescription)
+                 
+                 print("something went wrong")
              }
             
             
