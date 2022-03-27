@@ -20,14 +20,14 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        if(defaults.bool(forKey: "darkModeEnabled")){
-            overrideUserInterfaceStyle = .dark
-            print("dark mode enabled")
+        if(defaults.bool(forKey: "lightModeEnabled")){
+            overrideUserInterfaceStyle = .light
+            
 //            modeControl.setOn(false, animated: true)
         }
-        else if !(defaults.bool(forKey: "darkModeEnabled")){
-            overrideUserInterfaceStyle = .light
-            print("dark mode not enabled")
+        else if !(defaults.bool(forKey: "lightModeEnabled")){
+            overrideUserInterfaceStyle = .dark
+           
 //            modeControl.setOn(true, animated: true)
         }
     }
@@ -36,13 +36,13 @@ class SettingsViewController: UIViewController {
 //        let mode = Int(modeControl.)
         if modeControl.isOn {
 //            modeControl.setOn(true, animated:true)
-            defaults.set(false, forKey: "darkModeEnabled")
+            defaults.set(true, forKey: "lightModeEnabled")
             modeControlLabel.text = "LIGHT MODE"
             overrideUserInterfaceStyle = .light
         }
         else {
 //            modeControl.setOn(true, animated:true)
-            defaults.set(true, forKey: "darkModeEnabled")
+            defaults.set(false, forKey: "lightModeEnabled")
             modeControlLabel.text = "DARK MODE"
             overrideUserInterfaceStyle = .dark
         }

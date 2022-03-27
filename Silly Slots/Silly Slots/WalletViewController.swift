@@ -12,7 +12,7 @@ import web3swift
 
 class WalletViewController: UIViewController {
 
-    
+    let defaults = UserDefaults.standard
     @IBOutlet weak var firstPasswordField: UITextField!
     
     @IBOutlet weak var confirmPasswordField: UITextField!
@@ -39,8 +39,20 @@ class WalletViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        defaults.synchronize()
+        if(defaults.bool(forKey: "lightModeEnabled")){
+            overrideUserInterfaceStyle = .light
+           
+        }
+        else if !(defaults.bool(forKey: "lightModeEnabled")){
+            overrideUserInterfaceStyle = .dark
+            
+        }
     }
     
     @IBAction func ethSignIn(_ sender: Any) {
