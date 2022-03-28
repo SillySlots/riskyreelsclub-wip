@@ -6,18 +6,18 @@
 //////
 //
 import UIKit
+import CoreData
 
 //
 class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
    
-    
     @IBOutlet weak var spinButton: UIButton!
     @IBOutlet weak var slotPickerView: UIPickerView!
     @IBOutlet weak var resultLabel: UILabel!
     
     var winFlag: Bool = false
     var bounds    = CGRect.zero
-    var dataArray = [[Int](), [Int](), [Int]()]
+    var dataArray = [[Int](), [Int](), [Int](), [Int]()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +29,41 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
+        return 4
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 100
     }
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 80.0
+    }
 
+
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 120.0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
+        
+        let pickerLabel = UILabel()
+        
+        switch component {
+            case 0 : pickerLabel.text = K.imageArray[(Int)(dataArray[0][row])]
+            case 1 : pickerLabel.text = K.imageArray[(Int)(dataArray[1][row])]
+            case 2 : pickerLabel.text = K.imageArray[(Int)(dataArray[2][row])]
+            case 3 : pickerLabel.text = K.imageArray[(Int)(dataArray[3][row])]
+            
+            default : print("done")
+        }
+        
+        pickerLabel.font = UIFont(name : K.emojiFont, size : 75)
+        pickerLabel.textAlignment = NSTextAlignment.center
+        return pickerLabel
+    }
+    
     func loadData() {
-        for i in 0...2 {
+        for i in 0...3 {
             for _ in 0...100 {
                 dataArray[i].append(Int.random(in: 0...K.imageArray.count - 1))
             }
@@ -70,8 +96,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func spinSlots() {
-        for i in 0...2 {
-            slotPickerView.selectRow(Int.random(in: 3...97), inComponent: i, animated: true)
+        for i in 0...3 {
+            slotPickerView.selectRow(Int.random(in: 4...97), inComponent: i, animated: true)
         }
     }
     
@@ -86,23 +112,26 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     
-    @IBAction func onSpin(_ sender: Any) {
-            spinSlots()
-        // check win or lose function below
+    func checkWinOrLose() {
         let emoji0 = slotPickerView.selectedRow(inComponent: 0)
         let emoji1 = slotPickerView.selectedRow(inComponent: 1)
         let emoji2 = slotPickerView.selectedRow(inComponent: 2)
-        
+        let emoji3 = slotPickerView.selectedRow(inComponent: 3)
+
+
         if (dataArray[0][emoji0] == dataArray[1][emoji1]
-            && dataArray[1][emoji1] == dataArray[2][emoji2]) {
+            && dataArray[1][emoji1] == dataArray[2][emoji2] && dataArray[2][emoji2] == dataArray[3][emoji3]) {
             resultLabel.text = K.win
-            
+
         } else {
         resultLabel.text = K.lose
         }
-        // animate function below
+    }
+
+    func animateButton(){
+    // animate button
         let shrinkSize = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width - 15, height: bounds.size.height)
-    
+
         UIView.animate(withDuration: 0.5,
                    delay: 0.0,
                    usingSpringWithDamping: 0.1,
@@ -110,66 +139,19 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
                    options: .curveLinear,
                    animations: { self.spinButton.bounds = shrinkSize },
                    completion: nil )
-//            checkWinOrLose()
-//            animateButton()
+    }
+    
+    @IBAction func onSpin(_ sender: Any) {
+            spinSlots()
+            checkWinOrLose()
+            animateButton()
         }
     }
 
-func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-    return 80.0
-}
 
 
-func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-    return 120.0
-}
 
-//func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
-//    
-//    let pickerLabel = UILabel()
-//    
-//    switch component {
-//        case 0 : pickerLabel.text = K.imageArray[(Int)(dataArray[0][row])]
-//        case 1 : pickerLabel.text = K.imageArray[(Int)(dataArray[1][row])]
-//        case 2 : pickerLabel.text = K.imageArray[(Int)(dataArray[2][row])]
-//        
-//        default : print("done")
-//    }
-//    
-//    pickerLabel.font = UIFont(name : K.emojiFont, size : 75)
-//    pickerLabel.textAlignment = NSTextAlignment.center
-//    return pickerLabel
-//}
-
-//    func checkWinOrLose() {
-//        let emoji0 = slotPickerView.selectedRow(inComponent: 0)
-//
-//        let emoji0 = slotPickerView.selectedRow(inComponent: 0)
-//        let emoji1 = slotPickerView.selectedRow(inComponent: 1)
-//        let emoji2 = slotPickerView.selectedRow(inComponent: 2)
-//
-//
-//        if (dataArray[0][emoji0] == dataArray[1][emoji1]
-//            && dataArray[1][emoji1] == dataArray[2][emoji2]) {
-//            resultLabel.text = K.win
-//
-//        } else {
-//        resultLabel.text = K.lose
-//        }
-//    }
-//
-//    func animateButton(){
-//    // animate button
-//        let shrinkSize = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width - 15, height: bounds.size.height)
-//
-//        UIView.animate(withDuration: 0.5,
-//                   delay: 0.0,
-//                   usingSpringWithDamping: 0.1,
-//                   initialSpringVelocity: 5,
-//                   options: .curveLinear,
-//                   animations: { self.spinButton.bounds = shrinkSize },
-//                   completion: nil )
-//    }
+    
 
 
 
