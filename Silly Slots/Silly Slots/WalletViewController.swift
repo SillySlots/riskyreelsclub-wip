@@ -38,6 +38,9 @@ class WalletViewController: UIViewController {
 //        var decimals: String
 //        var symbol: String
 //    }
+    
+    let web3 = Web3.InfuraMainnetWeb3()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,9 +96,23 @@ class WalletViewController: UIViewController {
             //get private key. probably a feature to add on the actual wallet
             let ethereumAddress = EthereumAddress(wallet.address)!
             let pkData = try! keystoreManager.UNSAFE_getPrivateKeyData(password: password, account: ethereumAddress).toHexString()
+            
+            
+            web3.addKeystoreManager(keystoreManager)
+            //initializing the eth addresses
+            let coldWalletAddress = EthereumAddress("0x6394b37Cf80A7358b38068f0CA4760ad49983a1B")!
+            let contractAddress = EthereumAddress("0xe22b8979739D724343bd002F9f432F5990879901", ignoreChecksum: true)!
+            //for the balance
+            let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
+            let balanceResult = try! web3.eth.getBalance(address: walletAddress)
+            let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
+            
+            print(balanceString)
+            print("it should have printed")
         }
         
         
+       // self.performSegue(withIdentifier: "actualWalletSegue", sender: nil)
         
         
     }
@@ -118,10 +135,10 @@ class WalletViewController: UIViewController {
             let address = keystore.addresses!.first!.address
             let wallet = Wallet(address: address, data: keyData, name: name, isHD: false)
             
-            
+          //  web3.addKeystoreManager(keystoreManager)
     
         }
-        
+        self.performSegue(withIdentifier: "actualWalletSegue", sender: nil)
         
         
             

@@ -21,6 +21,7 @@
 		95B485E327E2B25B00E648B3 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E227E2B25B00E648B3 /* FirstScreenViewController.swift */; };
 		95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E427E2B29A00E648B3 /* SignInViewController.swift */; };
 		95B485E727E2B2B400E648B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E627E2B2B400E648B3 /* SignUpViewController.swift */; };
+		95D22BD327F1FAD6008612CD /* WalletHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D22BD227F1FAD5008612CD /* WalletHomeViewController.swift */; };
 		95FA5D6027E8BECC00C421A8 /* AgePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA5D5F27E8BECC00C421A8 /* AgePopViewController.swift */; };
 		B95AC79D27EC2FCB00209585 /* SlotMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */; };
 		B95AC79F27ED20B100209585 /* ReelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AC79E27ED20B100209585 /* ReelPickerView.swift */; };
@@ -42,6 +43,7 @@
 		95B485E227E2B25B00E648B3 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
 		95B485E427E2B29A00E648B3 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		95B485E627E2B2B400E648B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		95D22BD227F1FAD5008612CD /* WalletHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHomeViewController.swift; sourceTree = "<group>"; };
 		95FA5D5F27E8BECC00C421A8 /* AgePopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgePopViewController.swift; sourceTree = "<group>"; };
 		B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineViewController.swift; sourceTree = "<group>"; };
 		B95AC79E27ED20B100209585 /* ReelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelPickerView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				9586CDCA27EBF64300D86C33 /* WalletViewController.swift */,
 				B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */,
 				B95AC79E27ED20B100209585 /* ReelPickerView.swift */,
+				95D22BD227F1FAD5008612CD /* WalletHomeViewController.swift */,
 			);
 			path = "Silly Slots";
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				B95AC79F27ED20B100209585 /* ReelPickerView.swift in Sources */,
 				95B485E327E2B25B00E648B3 /* FirstScreenViewController.swift in Sources */,
 				95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */,
+				95D22BD327F1FAD6008612CD /* WalletHomeViewController.swift in Sources */,
 				95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */,
 				B95AC79D27EC2FCB00209585 /* SlotMachineViewController.swift in Sources */,
 				95151FC127E2A9A1008ADA23 /* SceneDelegate.swift in Sources */,

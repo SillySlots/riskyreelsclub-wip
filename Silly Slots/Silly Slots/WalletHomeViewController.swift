@@ -1,4 +1,3 @@
-
 //
 //  ActualWalletViewController.swift
 //  Silly Slots
@@ -7,9 +6,9 @@
 //
 
 import UIKit
-//import web3swift
+import web3swift
 
-class ActualWalletViewController: UIViewController {
+class WalletHomeViewController: UIViewController {
     
     
     //intializing the ethereum address
@@ -30,12 +29,12 @@ class ActualWalletViewController: UIViewController {
 //    print("Ether Balance :\(String(describing: Web3.Utils.formatToEthereumUnits(balancebigint ?? 0)!))")
         
         
-        let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
-        let balanceResult = try! web3.eth.getBalance(address: walletAddress)
-        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
+//        let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
+//        let balanceResult = try! web3.eth.getBalance(address: walletAddress)
+//        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
         
-        print(balanceString)
-        print("balanceString should have been printed")
+//        print(balanceString)
+//        print("balanceString should have been printed")
     }
     
     
@@ -49,7 +48,7 @@ class ActualWalletViewController: UIViewController {
 //        let web3 = Web3.InfuraRopstenWeb3() // Ropsten Infura Endpoint Provider
 //
         
-        web3.addKeystoreManager(keystoreManager)
+       // web3.addKeystoreManager(keystoreManager)
     }
 
     /*

@@ -138,21 +138,6 @@
             </objects>
             <point key="canvasLocation" x="-88.405797101449281" y="1575.6696428571429"/>
         </scene>
-        <!--Actual Wallet View Controller-->
-        <scene sceneID="Lei-4e-7a6">
-            <objects>
-                <viewController id="1JX-A6-HDu" customClass="ActualWalletViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yvM-Oh-YNY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="9cz-7U-hK7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z7r-aX-mqO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-946" y="2302"/>
-        </scene>
         <!--Wallet-->
         <scene sceneID="yTE-vz-snW">
             <objects>
@@ -197,7 +182,6 @@
                                 <connections>
                                     <action selector="ethSignIn:" destination="dbv-ON-KtV" eventType="touchUpInside" id="y5S-u4-cPb"/>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U3n-8V-tPM"/>
-                                    <segue destination="1JX-A6-HDu" kind="presentation" identifier="actualWalletSegue" id="Tye-p6-7gH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connect ETH Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hH-fh-aIB">
@@ -245,6 +229,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dT7-O1-KDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-946.37681159420299" y="1575.6696428571429"/>
+        </scene>
+        <!--Wallet Home View Controller-->
+        <scene sceneID="KGH-8l-F5M">
+            <objects>
+                <viewController id="blk-iX-374" customClass="WalletHomeViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ao-FV-jMi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BKp-Vr-Q2u"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81r-49-CME" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-962" y="2229"/>
         </scene>
         <!--Settings-->
         <scene sceneID="FtS-QS-ag5">
