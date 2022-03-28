@@ -25,6 +25,7 @@
 		95FA5D6027E8BECC00C421A8 /* AgePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA5D5F27E8BECC00C421A8 /* AgePopViewController.swift */; };
 		B95AC79D27EC2FCB00209585 /* SlotMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */; };
 		B95AC79F27ED20B100209585 /* ReelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AC79E27ED20B100209585 /* ReelPickerView.swift */; };
+		B98A549427F22633003B6BD3 /* ReelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A549327F22633003B6BD3 /* ReelConstants.swift */; };
 		B994E7CC27E2BC3400159254 /* SlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B994E7CB27E2BC3400159254 /* SlotViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		95FA5D5F27E8BECC00C421A8 /* AgePopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgePopViewController.swift; sourceTree = "<group>"; };
 		B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineViewController.swift; sourceTree = "<group>"; };
 		B95AC79E27ED20B100209585 /* ReelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelPickerView.swift; sourceTree = "<group>"; };
+		B98A549327F22633003B6BD3 /* ReelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelConstants.swift; sourceTree = "<group>"; };
 		B994E7CB27E2BC3400159254 /* SlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotViewController.swift; sourceTree = "<group>"; };
 		DB9EB0838ACD8D18E59123A7 /* Pods_Silly_Slots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silly_Slots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67BA5F2AA058A70AF7469CE /* Pods-Silly Slots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silly Slots.release.xcconfig"; path = "Target Support Files/Pods-Silly Slots/Pods-Silly Slots.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */,
 				B95AC79E27ED20B100209585 /* ReelPickerView.swift */,
 				95D22BD227F1FAD5008612CD /* WalletHomeViewController.swift */,
+				B98A549327F22633003B6BD3 /* ReelConstants.swift */,
 			);
 			path = "Silly Slots";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */,
 				95D22BD327F1FAD6008612CD /* WalletHomeViewController.swift in Sources */,
 				95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */,
+				B98A549427F22633003B6BD3 /* ReelConstants.swift in Sources */,
 				B95AC79D27EC2FCB00209585 /* SlotMachineViewController.swift in Sources */,
 				95151FC127E2A9A1008ADA23 /* SceneDelegate.swift in Sources */,
 				950D09F027E7DE2900532D47 /* SettingsViewController.swift in Sources */,

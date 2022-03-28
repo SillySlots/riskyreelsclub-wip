@@ -85,7 +85,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onSpin:" destination="m2b-OT-V3C" eventType="touchUpInside" id="NMh-Ts-EJm"/>
+                                    <action selector="onSpin:" destination="m2b-OT-V3C" eventType="touchUpInside" id="xqz-Fv-Un6"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz2-Lr-tIS">
@@ -122,14 +122,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Slots" id="NsZ-Gy-t8o"/>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="2f3-m6-R7N"/>
-                        <barButtonItem title="Item" id="VGP-5i-a4I"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="resultLabel" destination="mXA-Qp-VVw" id="edu-N3-WUg"/>
-                        <outlet property="slotButton" destination="KBx-20-7yN" id="Hwc-cx-eGS"/>
                         <outlet property="slotPickerView" destination="vz2-Lr-tIS" id="Zae-x9-dGd"/>
                         <outlet property="spinButton" destination="KBx-20-7yN" id="FqO-76-o4l"/>
                     </connections>
