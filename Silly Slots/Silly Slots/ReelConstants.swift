@@ -8,7 +8,7 @@
 import Foundation
 enum K {
     static let emojiFont  = "Apple Color Emoji"
-    static let win        = "Winner!"
+    static let win        = "WINNER"
     static let lose       = "4 In A Row"
     static let sound      = "Slots"
     static let imageArray = ["🍋", "❤️", "🍒", "🍌", "🍊", "🔔", "🍉", "👑"]
