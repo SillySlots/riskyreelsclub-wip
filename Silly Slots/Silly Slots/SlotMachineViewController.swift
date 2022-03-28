@@ -1,9 +1,9 @@
-////
-////  SlotMachineViewController.swift
-////  Silly Slots
-////
-////  Created by Caroline Mitchem on 3/23/22.
-////
+//////
+//////  SlotMachineViewController.swift
+//////  Silly Slots
+//////
+//////  Created by Caroline Mitchem on 3/23/22.
+//////
 //
 //import UIKit
 //import Parse
@@ -36,7 +36,7 @@
 //    
 //    
 //
-//    
+//    let images = [rug, ape, dollar, banana, w, m, g, i] as! PFObject
 //    
 //    var rug = (reelImage["rug"] as? [PFObject]) ?? []
 //    var ape = (reelImage["ape"] as? [PFObject]) ?? []
@@ -45,7 +45,7 @@
 //    var w = (reelImage["wsymbol"] as? [PFObject]) ?? []
 //    var m = (reelImage["msymbol"] as? [PFObject]) ?? []
 //    var g = (reelImage["isymbol"] as? [PFObject]) ?? []
-//    var g = (reelImage["gsymbol"] as? [PFObject]) ?? []
+//    var i = (reelImage["gsymbol"] as? [PFObject]) ?? []
 ////    var winSound  = SoundManager()
 ////    var rattle    = SoundManager()
 //
