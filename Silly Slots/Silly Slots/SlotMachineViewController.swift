@@ -7,6 +7,7 @@
 //
 import UIKit
 import CoreData
+import Parse
 
 //
 class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -18,6 +19,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var winFlag: Bool = false
     var bounds    = CGRect.zero
     var dataArray = [[Int](), [Int](), [Int](), [Int]()]
+    var reelImageArray = [[PFObject](), [PFObject](), [PFObject](), [PFObject]()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +111,61 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
                        options      : .curveEaseOut,
                        animations   : { self.spinButton.alpha = 1 },
                        completion   : nil)
+        
+//        let query = PFQuery(className:"reelImage")
+//        query.getObjectInBackground(withId: "55aGPEtvyQ") { (reelImage, error) in
+//            if error == nil {
+//                var symboli = reelImage!["photo"] as? PFObject
+//            } else {
+//                // Fail!
+//            }
+//        }
+//        query.getObjectInBackground(withId: "H5LtgQW3bn") { (reelImage, error) in
+//            if error == nil {
+//                var symbolm = reelImage!["photo"] as? PFObject
+//            } else {
+//                // Fail!
+//            }
+//        }
+//
+//        query.getObjectInBackground(withId: "OqPisOBxtR") { (reelImage, error) in
+//            if error == nil {
+//                var symbolg = reelImage!["photo"] as? PFObject
+//            } else {
+//                // Fail!
+//            }
+//        }
+//        query.getObjectInBackground(withId: "8aoDWq9unQ") { (reelImage, error) in
+//            if error == nil {
+//                var symbolw = reelImage!["photo"] as? PFObject
+//            } else {
+//                // Fail!
+//            }
+//        }
+//        query.getObjectInBackground(withId: "l6Y7LiB7PM") { (reelImage, error) in
+//            if error == nil {
+//                var bananas = reelImage!["photo"] as? PFObject
+//            } else {
+//                // Fail!
+//            }
+//        }
+//        query.getObjectInBackground(withId: "hRloRjGLJw") { (reelImage, error) in
+//            if error == nil {
+//                var rug = reelImage!["photo"] as? PFObject
+//            } else {
+//                // Fail!
+//            }
+//        }
+//        query.getObjectInBackground(withId: "veedoYWByx") { (reelImage, error) in
+//            if error == nil {
+//                var ape = reelImage!["photo"] as? PFObject
+//            } else {
+//                // Fail!
+//            }
+//        }
+        
+        //reelImageArray = [ape, rug, bananas, symbolw, symboli, symbolm, symbolg]
+        
     }
     
     

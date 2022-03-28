@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Parse
+
 enum K {
     static let emojiFont  = "Apple Color Emoji"
     static let win        = "WINNER"
@@ -13,4 +15,6 @@ enum K {
     static let sound      = "Slots"
     static let imageArray = ["🍋", "❤️", "🍒", "🍌", "🍊", "🔔", "🍉", "👑"]
     static let rattle     = "Rattle"
+    
+    
 }
