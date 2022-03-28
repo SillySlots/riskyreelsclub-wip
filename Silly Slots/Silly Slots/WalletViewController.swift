@@ -112,7 +112,7 @@ class WalletViewController: UIViewController {
         }
         
         
-       // self.performSegue(withIdentifier: "actualWalletSegue", sender: nil)
+        self.performSegue(withIdentifier: "actualWalletSegue", sender: nil)
         
         
     }

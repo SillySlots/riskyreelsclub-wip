@@ -224,6 +224,7 @@
                         <outlet property="confirmPasswordField" destination="Q9C-VO-Zkm" id="9oT-UU-WP3"/>
                         <outlet property="firstPasswordField" destination="jq7-lt-DeW" id="stu-S3-tAE"/>
                         <outlet property="privKeyField" destination="92Y-Ba-Kqy" id="hzV-IH-e20"/>
+                        <segue destination="blk-iX-374" kind="show" identifier="actualWalletSegue" id="7pE-rQ-69m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dT7-O1-KDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,15 +236,32 @@
             <objects>
                 <viewController id="blk-iX-374" customClass="WalletHomeViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ao-FV-jMi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL2-La-SZ8">
+                                <rect key="frame" x="162" y="259" width="90" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUy-MU-JCw">
+                                <rect key="frame" x="101" y="174" width="212" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="75"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BKp-Vr-Q2u"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KJb-BL-9Dd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81r-49-CME" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-962" y="2229"/>
+            <point key="canvasLocation" x="-975" y="2296"/>
         </scene>
         <!--Settings-->
         <scene sceneID="FtS-QS-ag5">
