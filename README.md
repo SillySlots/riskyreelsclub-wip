@@ -199,4 +199,8 @@ query.findObjectsInBackground { (wallet: [PFObject]?, error: Error?) in
 ### Milestone 1 gif:
 ![milestone1gif](https://user-images.githubusercontent.com/98482932/159284783-cc25cdab-dd4d-46bf-8037-10c6d5cdba97.gif)
 
+### Milestone 2 gif:
+![4Ekv1UhHMv](https://user-images.githubusercontent.com/98482932/160944778-7dbec1e3-1307-4f30-b965-50eac09f04ca.gif)
+
+
 
