@@ -254,6 +254,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="KJb-BL-9Dd"/>
+                    <connections>
+                        <outlet property="balanceLabel" destination="iUy-MU-JCw" id="7c6-1R-VY3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81r-49-CME" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
