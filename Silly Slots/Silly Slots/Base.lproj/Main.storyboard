@@ -68,7 +68,7 @@
         <!--Slots-->
         <scene sceneID="Yqk-Mw-8Zd">
             <objects>
-                <viewController id="m2b-OT-V3C" customClass="SlotMachineViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SlotMachineViewController" id="m2b-OT-V3C" customClass="SlotMachineViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Hp-fY-VF8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,6 +292,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jB-Ze-RyJ">
+                                <rect key="frame" x="95" y="219" width="229" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LOGOUT">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="50"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onLogout:" destination="t7s-5K-MO3" eventType="touchUpInside" id="dY7-9h-c5K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VDq-4b-AO2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -310,7 +323,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Dqc-xO-2cf">
             <objects>
-                <tabBarController id="7UR-Su-vIM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="7UR-Su-vIM" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VoW-sd-Qnw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -464,7 +477,7 @@
         <!--First Screen View Controller-->
         <scene sceneID="l6m-Qi-cPr">
             <objects>
-                <viewController id="7Bj-mH-Ii3" customClass="FirstScreenViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstScreenViewController" id="7Bj-mH-Ii3" customClass="FirstScreenViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vJr-mY-Z5R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -520,6 +533,9 @@
         <image name="text" width="1400" height="2000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
