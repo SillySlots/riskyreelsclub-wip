@@ -67,6 +67,11 @@ enum K {
     static let lose       = "4 In A Row"
     static let sound      = "Slots"
     static let imageArray = ["🍋", "❤️", "🍒", "🍌", "🍊", "🔔", "🍉", "👑"]
+    
+    
+    
+    //static var logoImages: [UIImage] = [dollarSign, g]
+    
     static let rattle     = "Rattle"
     
     
