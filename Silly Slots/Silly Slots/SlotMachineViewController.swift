@@ -19,7 +19,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var winFlag: Bool = false
     var bounds    = CGRect.zero
     var dataArray = [[Int](), [Int](), [Int](), [Int]()]
-    var reelImageArray = [[PFObject](), [PFObject](), [PFObject](), [PFObject]()]
+    var reelImageArray = [[PFObject](), [PFObject](), [PFObject](), [PFObject](), [PFObject](), [PFObject]()]
     
     
     
@@ -88,10 +88,9 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
         
         //let pickerLabel = UILabel()
+        let size = CGSize(width: 5, height: 5)
         
         var dollarsign = UIImage(named: "dollarSign.png")!
-        
-        let size = CGSize(width: 80, height: 80)
         dollarsign =  resizeImage(image: dollarsign, targetSize: size)!
         var wpng = UIImage(named: "w.png")!
         wpng = resizeImage(image: wpng, targetSize: size)!
@@ -99,24 +98,88 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         gpng = resizeImage(image: gpng, targetSize: size)!
         var ipng = UIImage(named: "i.png")!
         ipng = resizeImage(image: ipng, targetSize: size)!
+        var ape = UIImage(named: "ape.png")!
+        ape =  resizeImage(image: ape, targetSize: size)!
+        var rug = UIImage(named: "rug.png")!
+        rug = resizeImage(image: rug, targetSize: size)!
+        var diamond = UIImage(named: "diamond.png")!
+        diamond = resizeImage(image: diamond, targetSize: size)!
+        var banana = UIImage(named: "banana.png")!
+        banana = resizeImage(image: banana, targetSize: size)!
+        var treasure = UIImage(named: "treasure.png")!
+        treasure = resizeImage(image: treasure, targetSize: size)!
+        
+//        let image1: UIImageView = UIImageView()
+//        let image2: UIImageView = UIImageView()
+//        let image3: UIImageView = UIImageView()
+//        let image4: UIImageView = UIImageView()
+//        let image5: UIImageView = UIImageView()
+//        let image6: UIImageView = UIImageView()
+//
+//        var imagesArray1: [UIImageView:UIImage]
+//        imagesArray1 = [image1: dollarsign, image2: ape, image3: diamond, image4: rug, image5: banana, image6:treasure]
+//
+//        for (element, image) in imagesArray1 {
+//             element.image = image
+//        }
+//
+//        var imagesArray2: [UIImageView:UIImage]
+//        imagesArray2 = [image1: dollarsign, image2: ape, image3: diamond, image4: rug, image5: banana, image6:treasure]
+//        for (element, image) in imagesArray2 {
+//             element.image = image
+//        }
+//
+//        var imagesArray3: [UIImageView:UIImage]
+//        imagesArray3 = [image1: dollarsign, image2: ape, image3: diamond, image4: rug, image5: banana, image6:treasure]
+//        for (element, image) in imagesArray3 {
+//             element.image = image
+//        }
+//
+//        var imagesArray4: [UIImageView:UIImage]
+//        imagesArray4 = [image1: dollarsign, image2: ape, image3: diamond, image4: rug, image5: banana, image6:treasure]
+//        for (element, image) in imagesArray4 {
+//             element.image = image
+//        }
+//
+//
+        let randomSet: [[String:String]] = [["myImage":"ape"], ["myImage":"banana"], ["myImage":"rug"], ["myImage":"diamond"], ["myImage":"treasure"],["myImage":"dollarsign"]]
+
+        func randomiseSet () -> UIImage{
+            let randomNumber:Int = Int(arc4random_uniform(5))
+            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
+            let size = CGSize(width: 80, height: 80)
+            image = resizeImage(image: image, targetSize: size)!
+           return image
+        }
+
+        
+        
         switch component {
             case 0 : imageView = //pickerLabel.text = 
-            UIImageView(image: dollarsign)
+           // UIImageView(image: dollarsign)
+            UIImageView(image: randomiseSet())
+            //imagesArray1[(Int)(dataArray[1][row])]
           //  K.imageArray[(Int)(dataArray[0][row])]
                // imageArray2[(Int)(dataArray[0][row])]
           // myImageView =  UIImageView(image: UIImage(named: "dollarSign.png"))
-        
+           
+            
+            
             case 1 :  imageView = //pickerLabel.text =
-            UIImageView(image: wpng)
+            UIImageView(image: randomiseSet())
+            //UIImageView(image: wpng)
             
             //K.imageArray[(Int)(dataArray[1][row])]
            // imageArray2[(Int)(dataArray[1][row])]
+            
             case 2 : imageView = // pickerLabel.text =
-            UIImageView(image: gpng)
+            UIImageView(image: randomiseSet())
+            //UIImageView(image: gpng)
             //K.imageArray[(Int)(dataArray[2][row])]
            // imageArray2[(Int)(dataArray[2][row])]
             case 3 : imageView = //pickerLabel.text =
-            UIImageView(image: ipng)
+            UIImageView(image: randomiseSet())
+            //UIImageView(image: ipng)
             //K.imageArray[(Int)(dataArray[3][row])]
             //imageArray2[(Int)(dataArray[3][row])]
             
@@ -173,8 +236,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration : 0.5,
-                       delay        : 0.3,
+        UIView.animate(withDuration : 0.00,
+                       delay        : 0.00,
                        options      : .curveEaseOut,
                        animations   : { self.spinButton.alpha = 1 },
                        completion   : nil)
