@@ -226,23 +226,27 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
 //        let comp0 = UIImage.itemProviderVisibilityForRepresentation(withTypeIdentifier: <#T##String#>) slotPickerView.selectedRow(inComponent: 0)
         //let comp = UIImage.imageAss
-        let comp0 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
-        var image0 = comp0?.image as? UIImage
+        let row0=slotPickerView.selectedRow(inComponent: 0)
+        let comp0 = slotPickerView.view(forRow: row0, forComponent: 0) as? UIImageView
+        var image0 = comp0?.image
        // image0?.cgImage
         
-        let comp1 = slotPickerView.view(forRow: 0, forComponent: 1) as? UIImageView
-        var image1 = comp1?.image as? UIImage
+        let row1=slotPickerView.selectedRow(inComponent: 1)
+        let comp1 = slotPickerView.view(forRow: row1, forComponent: 1) as? UIImageView
+        var image1 = comp1?.image
         //image1?.cgImage
         
-        let comp2 = slotPickerView.view(forRow: 0, forComponent: 2) as? UIImageView
-        var image2 = comp2?.image as? UIImage
+        let row2=slotPickerView.selectedRow(inComponent: 2)
+        let comp2 = slotPickerView.view(forRow: row2, forComponent: 2) as? UIImageView
+        var image2 = comp2?.image
         //image2?.cgImage
         
-        let comp3 = slotPickerView.view(forRow: 0, forComponent: 3) as? UIImageView
-        var image3 = comp3?.image as? UIImage
+        let row3=slotPickerView.selectedRow(inComponent: 3)
+        let comp3 = slotPickerView.view(forRow: row3, forComponent: 3) as? UIImageView
+        var image3 = comp3?.image
         //image3?.cgImage
         
-        print(" cg image0  \(image0?.cgImage) cg image 1  \(image1?.cgImage)")
+        print(" comp0  \(comp0) comp 1  \(comp1)")
        
         if (image0?.cgImage ==  image1?.cgImage &&  image1?.cgImage == image2?.cgImage && image2?.cgImage == image3?.cgImage){
             resultLabel.text = "W I N N E R !"
