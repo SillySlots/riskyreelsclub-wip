@@ -20,8 +20,29 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var bounds    = CGRect.zero
     var dataArray = [[Int](), [Int](), [Int](), [Int]()]
     var reelImageArray = [[PFObject](), [PFObject](), [PFObject](), [PFObject](), [PFObject](), [PFObject]()]
+    var randomSet = [[String:String](), [String:String](), [String:String](),
+        [String:String](),[String:String](), [String:String]()]
     
+    let size = CGSize(width: 5, height: 5)
     
+    var dollarsign = UIImage(named: "dollarSign.png")!
+    //dollarsign =  resizeImage(image: dollarsign, targetSize: size)!
+    var wpng = UIImage(named: "w.png")!
+   // wpng = resizeImage(image: wpng, targetSize: size)!
+    var gpng = UIImage(named: "g.png")!
+   // gpng = resizeImage(image: gpng, targetSize: size)!
+    var ipng = UIImage(named: "i.png")!
+    //ipng = resizeImage(image: ipng, targetSize: size)!
+    var ape = UIImage(named: "ape.png")!
+    //ape =  resizeImage(image: ape, targetSize: size)!
+    var rug = UIImage(named: "rug.png")!
+   // rug = resizeImage(image: rug, targetSize: size)!
+    var diamond = UIImage(named: "diamond.png")!
+    //diamond = resizeImage(image: diamond, targetSize: size)!
+    var banana = UIImage(named: "banana.png")!
+   // banana = resizeImage(image: banana, targetSize: size)!
+    var treasure = UIImage(named: "treasure.png")!
+    //treasure = resizeImage(image: treasure, targetSize: size)!
     
     
     var imageArray2: [UIImage] = [
@@ -87,62 +108,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
         
-        //let pickerLabel = UILabel()
-        let size = CGSize(width: 5, height: 5)
-        
-        var dollarsign = UIImage(named: "dollarSign.png")!
-        dollarsign =  resizeImage(image: dollarsign, targetSize: size)!
-        var wpng = UIImage(named: "w.png")!
-        wpng = resizeImage(image: wpng, targetSize: size)!
-        var gpng = UIImage(named: "g.png")!
-        gpng = resizeImage(image: gpng, targetSize: size)!
-        var ipng = UIImage(named: "i.png")!
-        ipng = resizeImage(image: ipng, targetSize: size)!
-        var ape = UIImage(named: "ape.png")!
-        ape =  resizeImage(image: ape, targetSize: size)!
-        var rug = UIImage(named: "rug.png")!
-        rug = resizeImage(image: rug, targetSize: size)!
-        var diamond = UIImage(named: "diamond.png")!
-        diamond = resizeImage(image: diamond, targetSize: size)!
-        var banana = UIImage(named: "banana.png")!
-        banana = resizeImage(image: banana, targetSize: size)!
-        var treasure = UIImage(named: "treasure.png")!
-        treasure = resizeImage(image: treasure, targetSize: size)!
-        
-//        let image1: UIImageView = UIImageView()
-//        let image2: UIImageView = UIImageView()
-//        let image3: UIImageView = UIImageView()
-//        let image4: UIImageView = UIImageView()
-//        let image5: UIImageView = UIImageView()
-//        let image6: UIImageView = UIImageView()
-//
-//        var imagesArray1: [UIImageView:UIImage]
-//        imagesArray1 = [image1: dollarsign, image2: ape, image3: diamond, image4: rug, image5: banana, image6:treasure]
-//
-//        for (element, image) in imagesArray1 {
-//             element.image = image
-//        }
-//
-//        var imagesArray2: [UIImageView:UIImage]
-//        imagesArray2 = [image1: dollarsign, image2: ape, image3: diamond, image4: rug, image5: banana, image6:treasure]
-//        for (element, image) in imagesArray2 {
-//             element.image = image
-//        }
-//
-//        var imagesArray3: [UIImageView:UIImage]
-//        imagesArray3 = [image1: dollarsign, image2: ape, image3: diamond, image4: rug, image5: banana, image6:treasure]
-//        for (element, image) in imagesArray3 {
-//             element.image = image
-//        }
-//
-//        var imagesArray4: [UIImageView:UIImage]
-//        imagesArray4 = [image1: dollarsign, image2: ape, image3: diamond, image4: rug, image5: banana, image6:treasure]
-//        for (element, image) in imagesArray4 {
-//             element.image = image
-//        }
-//
-//
-        let randomSet: [[String:String]] = [["myImage":"ape"], ["myImage":"banana"], ["myImage":"rug"], ["myImage":"diamond"], ["myImage":"treasure"],["myImage":"dollarsign"]]
+        randomSet = [["myImage":"ape"], ["myImage":"banana"], ["myImage":"rug"], ["myImage":"diamond"], ["myImage":"treasure"],["myImage":"dollarsign"]]
 
         func randomiseSet () -> UIImage{
             let randomNumber:Int = Int(arc4random_uniform(5))
@@ -197,7 +163,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         for i in 0...3 {
             for _ in 0...100 {
               // dataArray[i].append(Int.random(in: 0...K.imageArray.count - 1))
-                dataArray[i].append(Int.random(in: 0...imageArray2.count - 1))
+                dataArray[i].append(Int.random(in: 0...randomSet.count - 1))
             }
         }
     }
@@ -241,77 +207,42 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
                        options      : .curveEaseOut,
                        animations   : { self.spinButton.alpha = 1 },
                        completion   : nil)
-        
-//        let query = PFQuery(className:"reelImage")
-//        query.getObjectInBackground(withId: "55aGPEtvyQ") { (reelImage, error) in
-//            if error == nil {
-//                var symboli = reelImage!["photo"] as? PFObject
-//            } else {
-//                // Fail!
-//            }
-//        }
-//        query.getObjectInBackground(withId: "H5LtgQW3bn") { (reelImage, error) in
-//            if error == nil {
-//                var symbolm = reelImage!["photo"] as? PFObject
-//            } else {
-//                // Fail!
-//            }
-//        }
-//
-//        query.getObjectInBackground(withId: "OqPisOBxtR") { (reelImage, error) in
-//            if error == nil {
-//                var symbolg = reelImage!["photo"] as? PFObject
-//            } else {
-//                // Fail!
-//            }
-//        }
-//        query.getObjectInBackground(withId: "8aoDWq9unQ") { (reelImage, error) in
-//            if error == nil {
-//                var symbolw = reelImage!["photo"] as? PFObject
-//            } else {
-//                // Fail!
-//            }
-//        }
-//        query.getObjectInBackground(withId: "l6Y7LiB7PM") { (reelImage, error) in
-//            if error == nil {
-//                var bananas = reelImage!["photo"] as? PFObject
-//            } else {
-//                // Fail!
-//            }
-//        }
-//        query.getObjectInBackground(withId: "hRloRjGLJw") { (reelImage, error) in
-//            if error == nil {
-//                var rug = reelImage!["photo"] as? PFObject
-//            } else {
-//                // Fail!
-//            }
-//        }
-//        query.getObjectInBackground(withId: "veedoYWByx") { (reelImage, error) in
-//            if error == nil {
-//                var ape = reelImage!["photo"] as? PFObject
-//            } else {
-//                // Fail!
-//            }
-//        }
-        
-        //reelImageArray = [ape, rug, bananas, symbolw, symboli, symbolm, symbolg]
-        
     }
     
     
     func checkWinOrLose() {
-        let emoji0 = slotPickerView.selectedRow(inComponent: 0)
-        let emoji1 = slotPickerView.selectedRow(inComponent: 1)
-        let emoji2 = slotPickerView.selectedRow(inComponent: 2)
-        let emoji3 = slotPickerView.selectedRow(inComponent: 3)
+//        let image0 = slotPickerView.selectedRow(inComponent: 0)
+//        let image1 = slotPickerView.selectedRow(inComponent: 1)
+//        let image2 = slotPickerView.selectedRow(inComponent: 2)
+//        let image3 = slotPickerView.selectedRow(inComponent: 3)
 
+//        let image0 = UIImage.init(imageLiteralResourceName: "ape.png")
+//        let image1 = UIImage.init(imageLiteralResourceName: "banana.png")
+//        let image2 = UIImage.init(imageLiteralResourceName: "diamond.png")
+//        let image3 = UIImage.init(imageLiteralResourceName: "rug.png")
+//        let image4 = UIImage.init(imageLiteralResourceName: "dollarsigns.png")
+//        let image5 = UIImage.init(imageLiteralResourceName: "treasure.png")
 
-        if (dataArray[0][emoji0] == dataArray[1][emoji1]
-            && dataArray[1][emoji1] == dataArray[2][emoji2] && dataArray[2][emoji2] == dataArray[3][emoji3]) {
-            resultLabel.text = K.win
+//        let comp0 = UIImage.itemProviderVisibilityForRepresentation(withTypeIdentifier: <#T##String#>) slotPickerView.selectedRow(inComponent: 0)
+        //let comp = UIImage.imageAss
+        let comp0 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
+        
+        let comp1 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
+        
+        let comp2 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
+        
+        let comp3 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
+       
+        if (comp0?.description == comp1?.description && comp1?.description == comp2?.description && comp2?.description == comp3?.description){
+            resultLabel.text = "W I N N E R !"
+        }
+        else if(comp0?.description == comp1?.description || comp1?.description == comp2?.description || comp2?.description == comp3?.description){
+            resultLabel.text = "MONEY BACK"
 
-        } else {
-        resultLabel.text = K.lose
+        }
+        
+        else {
+        resultLabel.text = "RISKY REELS CLUB"
         }
     }
 
@@ -334,65 +265,4 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             animateButton()
         }
     }
-
-
-
-
-    
-
-
-
-
-//func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-//
-//    let pickerLabel = UILabel()
-//
-//    switch component {
-//        case 0 : pickerLabel.text = K.imageArray[(Int)(dataArray[0][row])]
-//        case 1 : pickerLabel.text = K.imageArray[(Int)(dataArray[1][row])]
-//        case 2 : pickerLabel.text = K.imageArray[(Int)(dataArray[2][row])]
-//        default : print("done")
-//    }
-//
-//    pickerLabel.font = UIFont(name : K.emojiFont, size : 75)
-//    pickerLabel.textAlignment = NSTextAlignment.center
-//    return pickerLabel
-//}
-
-
-
-
-//
-//    var bounds    = CGRect.zero
-//    var dataArray = [[PFObject](), [PFObject](), [PFObject](),  [PFObject](),  [PFObject]()]
-//    var winFlagbool = false
-//    var reelImage = [PFObject]()
-//    var selectedPost: PFObject!
-//    var pickerData: [String] = [String] ()
-//    var countImage: Int = 0
-//   // let reelImage = PFObject(className: "reelImage")
-//
-////    var rug = (reelImage["rug"] as? [PFObject]) ?? []
-////    var ape = (reelImage["ape"] as? [PFObject]) ?? []
-////    var dollar = (reelImage["dollarsigns"] as? [PFObject]) ?? []
-////    var banana = (reelImage["bananas"] as? [PFObject]) ?? []
-////    var w = (reelImage["wsymbol"] as? [PFObject]) ?? []
-////    var m = (reelImage["msymbol"] as? [PFObject]) ?? []
-////    var g = (reelImage["isymbol"] as? [PFObject]) ?? []
-////    var i = (reelImage["gsymbol"] as? [PFObject]) ?? []
-////    var winSound  = SoundManager()
-////    var rattle    = SoundManager()
-//
-////    let images = [rug, ape, dollar, banana, w, m, g, i] as! PFObject
-//
-//    let images = ["rug", "ape", "dollar", "banana", "chest"]
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        slotPickerView.delegate   = self
-//        slotPickerView.dataSource = self
-////        loadData()
-////        setupUIAndSound()
-////        spinSlots()
-//
 
