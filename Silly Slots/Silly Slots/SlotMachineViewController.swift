@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import Parse
+import web3swift
 
 //
 class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -260,6 +261,13 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     @IBAction func onSpin(_ sender: Any) {
+        
+        let web3 = Web3.InfuraRinkebyWeb3()
+       // web3.addKeystoreManager(keystoreManager)
+        
+        
+        
+        //insert pop up here
             spinSlots()
             checkWinOrLose()
             animateButton()

@@ -6,8 +6,9 @@
 //
 
 import UIKit
-//import EtherWalletKit
 import web3swift
+import Parse
+
 
 
 class WalletViewController: UIViewController {
@@ -18,6 +19,8 @@ class WalletViewController: UIViewController {
     @IBOutlet weak var confirmPasswordField: UITextField!
     
     @IBOutlet weak var privKeyField: UITextField!
+    
+    
     
     struct Wallet {
         let address: String
@@ -106,6 +109,21 @@ class WalletViewController: UIViewController {
             let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
             let balanceResult = try! web3.eth.getBalance(address: walletAddress)
             let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
+            
+            //save password and balance to parse
+            let walletStuff = PFObject(className:"walletManagement")
+            walletStuff["password"] = password
+            walletStuff["balance"] = balanceString
+            walletStuff.saveInBackground { (succeeded, error)  in
+                if (succeeded) {
+                    print("password and balance saved")
+                    // The object has been saved.
+                } else {
+                    print("password and balance has not been saved")
+                    // There was a problem, check error.description
+                }
+            }
+            
             
             print(balanceString)
             print("it should have printed")

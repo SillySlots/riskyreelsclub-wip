@@ -22,6 +22,7 @@
 		95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E427E2B29A00E648B3 /* SignInViewController.swift */; };
 		95B485E727E2B2B400E648B3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B485E627E2B2B400E648B3 /* SignUpViewController.swift */; };
 		95D22BD327F1FAD6008612CD /* WalletHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D22BD227F1FAD5008612CD /* WalletHomeViewController.swift */; };
+		95F5158327F90107003A83BC /* SlotPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5158227F90107003A83BC /* SlotPopUpViewController.swift */; };
 		95FA5D6027E8BECC00C421A8 /* AgePopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FA5D5F27E8BECC00C421A8 /* AgePopViewController.swift */; };
 		B95AC79D27EC2FCB00209585 /* SlotMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */; };
 		B98A549427F22633003B6BD3 /* ReelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98A549327F22633003B6BD3 /* ReelConstants.swift */; };
@@ -44,6 +45,7 @@
 		95B485E427E2B29A00E648B3 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		95B485E627E2B2B400E648B3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		95D22BD227F1FAD5008612CD /* WalletHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHomeViewController.swift; sourceTree = "<group>"; };
+		95F5158227F90107003A83BC /* SlotPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotPopUpViewController.swift; sourceTree = "<group>"; };
 		95FA5D5F27E8BECC00C421A8 /* AgePopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgePopViewController.swift; sourceTree = "<group>"; };
 		B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineViewController.swift; sourceTree = "<group>"; };
 		B98A549327F22633003B6BD3 /* ReelConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelConstants.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				B95AC79C27EC2FCB00209585 /* SlotMachineViewController.swift */,
 				95D22BD227F1FAD5008612CD /* WalletHomeViewController.swift */,
 				B98A549327F22633003B6BD3 /* ReelConstants.swift */,
+				95F5158227F90107003A83BC /* SlotPopUpViewController.swift */,
 			);
 			path = "Silly Slots";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				95FA5D6027E8BECC00C421A8 /* AgePopViewController.swift in Sources */,
 				95151FC327E2A9A1008ADA23 /* ViewController.swift in Sources */,
 				95B485E327E2B25B00E648B3 /* FirstScreenViewController.swift in Sources */,
+				95F5158327F90107003A83BC /* SlotPopUpViewController.swift in Sources */,
 				95151FBF27E2A9A1008ADA23 /* AppDelegate.swift in Sources */,
 				95D22BD327F1FAD6008612CD /* WalletHomeViewController.swift in Sources */,
 				95B485E527E2B29A00E648B3 /* SignInViewController.swift in Sources */,
