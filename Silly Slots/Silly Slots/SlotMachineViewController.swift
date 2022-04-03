@@ -23,6 +23,9 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var reelImageArray = [[PFObject](), [PFObject](), [PFObject](), [PFObject](), [PFObject](), [PFObject]()]
     var randomSet = [[String:String](), [String:String](), [String:String](),
         [String:String](),[String:String](), [String:String]()]
+    var componentsFromRow = [UIImage(),UIImage(),UIImage(),UIImage()]
+    
+    var stringArray = [String(), String(), String(), String()]
     
     let size = CGSize(width: 5, height: 5)
     
@@ -113,18 +116,30 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
         func randomiseSet () -> UIImage{
             let randomNumber:Int = Int(arc4random_uniform(5))
+            //print("about to print")
+            //print("\(randomSet[randomNumber]["myImage"]!)")
+            
             var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
             let size = CGSize(width: 80, height: 80)
             image = resizeImage(image: image, targetSize: size)!
+            
            return image
         }
+        
 
         
         
         switch component {
-            case 0 : imageView = //pickerLabel.text = 
-           // UIImageView(image: dollarsign)
-            UIImageView(image: randomiseSet())
+            case 0:
+          
+            let randomNumber:Int = Int(arc4random_uniform(5))
+            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
+            let size = CGSize(width: 80, height: 80)
+            image = resizeImage(image: image, targetSize: size)!
+            //let image =  randomiseSet()
+            stringArray[0] =  randomSet[randomNumber]["myImage"]!
+           imageView = UIImageView(image: image)
+            componentsFromRow[0] = image
             //imagesArray1[(Int)(dataArray[1][row])]
           //  K.imageArray[(Int)(dataArray[0][row])]
                // imageArray2[(Int)(dataArray[0][row])]
@@ -132,23 +147,35 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
            
             
             
-            case 1 :  imageView = //pickerLabel.text =
-            UIImageView(image: randomiseSet())
-            //UIImageView(image: wpng)
+            case 1 :
             
-            //K.imageArray[(Int)(dataArray[1][row])]
-           // imageArray2[(Int)(dataArray[1][row])]
+            let randomNumber:Int = Int(arc4random_uniform(5))
+            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
+            let size = CGSize(width: 80, height: 80)
+            image = resizeImage(image: image, targetSize: size)!
+            //let image =  randomiseSet()
+            stringArray[1] =  randomSet[randomNumber]["myImage"]!
+           imageView = UIImageView(image: image)
+            componentsFromRow[1] = image
             
-            case 2 : imageView = // pickerLabel.text =
-            UIImageView(image: randomiseSet())
-            //UIImageView(image: gpng)
-            //K.imageArray[(Int)(dataArray[2][row])]
-           // imageArray2[(Int)(dataArray[2][row])]
-            case 3 : imageView = //pickerLabel.text =
-            UIImageView(image: randomiseSet())
-            //UIImageView(image: ipng)
-            //K.imageArray[(Int)(dataArray[3][row])]
-            //imageArray2[(Int)(dataArray[3][row])]
+            case 2 :
+            let randomNumber:Int = Int(arc4random_uniform(5))
+            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
+            let size = CGSize(width: 80, height: 80)
+            image = resizeImage(image: image, targetSize: size)!
+            //let image =  randomiseSet()
+            stringArray[2] =  randomSet[randomNumber]["myImage"]!
+           imageView = UIImageView(image: image)
+            componentsFromRow[2] = image
+            case 3 :
+            let randomNumber:Int = Int(arc4random_uniform(5))
+            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
+            let size = CGSize(width: 80, height: 80)
+            image = resizeImage(image: image, targetSize: size)!
+            //let image =  randomiseSet()
+            stringArray[3] =  randomSet[randomNumber]["myImage"]!
+           imageView = UIImageView(image: image)
+            componentsFromRow[3] = image
             
             default : print("done")
         }
@@ -226,35 +253,71 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
 //        let comp0 = UIImage.itemProviderVisibilityForRepresentation(withTypeIdentifier: <#T##String#>) slotPickerView.selectedRow(inComponent: 0)
         //let comp = UIImage.imageAss
-        let row0=slotPickerView.selectedRow(inComponent: 0)
-        let comp0 = slotPickerView.view(forRow: row0, forComponent: 0) as? UIImageView
-        var image0 = comp0?.image
+       // let row0=slotPickerView.selectedRow(inComponent: 0)
+       // let comp0 = slotPickerView.view(forRow: row0, forComponent: 0) as? UIImageView
+        
+       let comp0 = stringArray[0]
+        let comp1 = stringArray[1]
+        let comp2 = stringArray[2]
+        let comp3 = stringArray[3]
+        
+        
+        print("\(comp0)")
+        print("\(comp1)")
+        print("\(comp2)")
+        print("\(comp3)")
+        //var image0 = comp0?.image
        // image0?.cgImage
         
-        let row1=slotPickerView.selectedRow(inComponent: 1)
-        let comp1 = slotPickerView.view(forRow: row1, forComponent: 1) as? UIImageView
-        var image1 = comp1?.image
+       // let row1=slotPickerView.selectedRow(inComponent: 1)
+        //let comp1 = slotPickerView.view(forRow: row1, forComponent: 1) as? UIImageView
+        //var image1 = comp1?.image
         //image1?.cgImage
         
-        let row2=slotPickerView.selectedRow(inComponent: 2)
-        let comp2 = slotPickerView.view(forRow: row2, forComponent: 2) as? UIImageView
-        var image2 = comp2?.image
+       // let row2=slotPickerView.selectedRow(inComponent: 2)
+       // let comp2 = slotPickerView.view(forRow: row2, forComponent: 2) as? UIImageView
+       // var image2 = comp2?.image
         //image2?.cgImage
         
-        let row3=slotPickerView.selectedRow(inComponent: 3)
-        let comp3 = slotPickerView.view(forRow: row3, forComponent: 3) as? UIImageView
-        var image3 = comp3?.image
+       // let row3=slotPickerView.selectedRow(inComponent: 3)
+        //let comp3 = slotPickerView.view(forRow: row3, forComponent: 3) as? UIImageView
+        //var image3 = comp3?.image
+        
+        //print(slotPickerView.numberOfComponents)
+        
         //image3?.cgImage
         
-        print(" comp0  \(comp0) comp 1  \(comp1)")
+        //print(" comp0  \(comp0) comp 1  \(comp1)")
+        
+        //pickerView(slotPickerView, didSelectRow: 0, inComponent: 0)
+        let verbose1 = comp0.isEqual(comp1)
+        let verbose2 = comp1.isEqual(comp2)
+        let verbose3 = comp2.isEqual(comp3)
+        
+        
+        
+        print(verbose1)
+        print(verbose2)
+        print(verbose3)
+
        
-        if (image0?.cgImage ==  image1?.cgImage &&  image1?.cgImage == image2?.cgImage && image2?.cgImage == image3?.cgImage){
+        if (comp0.isEqual(comp1) && comp1.isEqual(comp2) && comp2.isEqual(comp3)){
+            print("they are the same")
             resultLabel.text = "W I N N E R !"
         }
-        else if(image0?.description == image1?.description || image1?.description == image2?.description || image2?.description == image3?.description){
-            resultLabel.text = "MONEY BACK"
+        else if(comp0.isEqual(comp1) || comp1.isEqual(comp2) || comp2.isEqual(comp3)){
+            print("they are different")
+            resultLabel.text = "L O S E R !"
 
         }
+        
+//        if (image0?.cgImage ==  image1?.cgImage &&  image1?.cgImage == image2?.cgImage && image2?.cgImage == image3?.cgImage){
+//            resultLabel.text = "W I N N E R !"
+//        }
+//        else if(image0?.description == image1?.description || image1?.description == image2?.description || image2?.description == image3?.description){
+//            resultLabel.text = "MONEY BACK"
+//
+//        }
         
         else {
         resultLabel.text = "RISKY REELS CLUB"
@@ -276,7 +339,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBAction func onSpin(_ sender: Any) {
         
-        let web3 = Web3.InfuraRinkebyWeb3()
+       // let web3 = Web3.InfuraRinkebyWeb3()
        // web3.addKeystoreManager(keystoreManager)
         
         
@@ -285,6 +348,13 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             spinSlots()
             checkWinOrLose()
             animateButton()
+        }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+        {
+            let location = randomSet[row]
+            print(location)
+
         }
     }
 

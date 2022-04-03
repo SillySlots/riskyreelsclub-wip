@@ -70,7 +70,7 @@
             <objects>
                 <viewController storyboardIdentifier="SlotMachineViewController" id="m2b-OT-V3C" customClass="SlotMachineViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Hp-fY-VF8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" image="altbackground" translatesAutoresizingMaskIntoConstraints="NO" id="FGr-0W-eky">
@@ -78,7 +78,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-20-7yN">
-                                <rect key="frame" x="123" y="714" width="168" height="74"/>
+                                <rect key="frame" x="123" y="734" width="168" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="S P I N">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="50"/>
@@ -89,7 +89,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz2-Lr-tIS">
-                                <rect key="frame" x="40" y="130" width="334" height="538"/>
+                                <rect key="frame" x="40" y="174" width="334" height="538"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="538" id="IBf-1I-Gbs"/>
                                 </constraints>
@@ -288,7 +288,7 @@
             <objects>
                 <viewController id="R30-xu-3ey" customClass="SlotPopUpViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ruH-lP-rFC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-i7-Vlf">
@@ -625,6 +625,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Czl-Ja-1AA"/>
         <segue reference="T3V-mL-xfa"/>
         <segue reference="HbH-9K-eIV"/>
     </inferredMetricsTieBreakers>
