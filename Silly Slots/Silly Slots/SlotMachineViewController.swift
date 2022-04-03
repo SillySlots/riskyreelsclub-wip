@@ -227,17 +227,27 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
 //        let comp0 = UIImage.itemProviderVisibilityForRepresentation(withTypeIdentifier: <#T##String#>) slotPickerView.selectedRow(inComponent: 0)
         //let comp = UIImage.imageAss
         let comp0 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
+        var image0 = comp0?.image as? UIImage
+       // image0?.cgImage
         
-        let comp1 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
+        let comp1 = slotPickerView.view(forRow: 0, forComponent: 1) as? UIImageView
+        var image1 = comp1?.image as? UIImage
+        //image1?.cgImage
         
-        let comp2 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
+        let comp2 = slotPickerView.view(forRow: 0, forComponent: 2) as? UIImageView
+        var image2 = comp2?.image as? UIImage
+        //image2?.cgImage
         
-        let comp3 = slotPickerView.view(forRow: 0, forComponent: 0) as? UIImageView
+        let comp3 = slotPickerView.view(forRow: 0, forComponent: 3) as? UIImageView
+        var image3 = comp3?.image as? UIImage
+        //image3?.cgImage
+        
+        print(" cg image0  \(image0?.cgImage) cg image 1  \(image1?.cgImage)")
        
-        if (comp0?.description == comp1?.description && comp1?.description == comp2?.description && comp2?.description == comp3?.description){
+        if (image0?.cgImage ==  image1?.cgImage &&  image1?.cgImage == image2?.cgImage && image2?.cgImage == image3?.cgImage){
             resultLabel.text = "W I N N E R !"
         }
-        else if(comp0?.description == comp1?.description || comp1?.description == comp2?.description || comp2?.description == comp3?.description){
+        else if(image0?.description == image1?.description || image1?.description == image2?.description || image2?.description == image3?.description){
             resultLabel.text = "MONEY BACK"
 
         }
