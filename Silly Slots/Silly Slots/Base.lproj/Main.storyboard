@@ -322,7 +322,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cs-Wg-TNb">
                                         <rect key="frame" x="26" y="130" width="323" height="218"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Risky Reels Club is intended to be a fun experience for our players. Please play responsibily. Do not bet eth that you do not feel comfortable parting with!</string>
+                                        <string key="text">Risky Reels Club is intended to be a fun experience for our players. Please play responsibily. Do not bet ETH that you do not feel comfortable parting with!</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
