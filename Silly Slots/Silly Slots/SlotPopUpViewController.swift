@@ -83,6 +83,11 @@ class SlotPopUpViewController: UIViewController {
         
     }
     
+    @IBAction func onConfirm(_ sender: Any) {
+        self.performSegue(withIdentifier: "returnSegue", sender: nil)
+    }
+    
+    
 
     /*
     // MARK: - Navigation
