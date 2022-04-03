@@ -64,7 +64,7 @@ class SlotPopUpViewController: UIViewController {
         let value: String = "1.0" // In Ether
        // let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
         //sends the money to our public address
-        let toAddress = EthereumAddress("0xeBf602Aef3668a37fb3231Bf5Ac56a6b4fD402B4")!
+        let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
         let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
         var options = TransactionOptions.defaultOptions
@@ -78,10 +78,8 @@ class SlotPopUpViewController: UIViewController {
             extraData: Data(),
             transactionOptions: options)!
         
-        
-        
-        
-        
+        //send transacation
+        //let password = passwordField.text!
         
     }
     
