@@ -25,10 +25,10 @@ class WalletHomeViewController: UIViewController {
 
     let coldWalletAddress = EthereumAddress("0x6394b37Cf80A7358b38068f0CA4760ad49983a1B")!
     let contractAddress = EthereumAddress("0xe22b8979739D724343bd002F9f432F5990879901", ignoreChecksum: true)!
+    let web3 = Web3.InfuraMainnetWeb3()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeWeb3()
         displayBalance()
 
         // Do any additional setup after loading the view.
@@ -37,33 +37,42 @@ class WalletHomeViewController: UIViewController {
     
     func displayBalance() {
         
-        let query = PFQuery(className:"walletManagement")
-        query.getObjectInBackground(withId: "Z1xpFDAdgz") { (walletManagement, error) in
-            if error == nil {
-                
-                let balance = walletManagement!["balance"] as? String
-                self.balanceLabel.text = ("$" + balance! + ".00")
-            } else {
-                print("it failed")
-            }
-        }
+       print( WalletViewController.Information.address2 )
         
-        balanceLabel.text = "$"  //+ balance + "asd"
-    }
-    
-    
-    func initializeWeb3() {
-        // common Http/Https provider
-//        let endpoint = "https://api.blockcypher.com/v1/eth/main"
-//        let web3 = web3(provider: Web3HttpProvider(URL(string: endpoint)!)!)
-        // precompiled Infura providers
-        let web3 = Web3.InfuraMainnetWeb3() // Mainnet Infura Endpoint Provider
-//        let web3 = Web3.InfuraRinkebyWeb3() // Rinkeby Infura Endpoint Provider
-//        let web3 = Web3.InfuraRopstenWeb3() // Ropsten Infura Endpoint Provider
+        
+        let wallet = Wallet(address: WalletViewController.Information.address2, data: WalletViewController.Information.data2, name: WalletViewController.Information.name2, isHD: false)
+        
+        
+        
+        let walletAddress = EthereumAddress(wallet.address)!
+        
+        
+        
+        let balanceResult = try! web3.eth.getBalance(address: walletAddress)
+        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
+        
+        
+        
+        print(balanceString + " is the balance string")
+        self.balanceLabel.text = ("$" + balanceString + ".00")
+        
+        
+//        let query = PFQuery(className:"walletManagement")
+//        query.getObjectInBackground(withId: "Z1xpFDAdgz") { (walletManagement, error) in
+//            if error == nil {
 //
-        
-       // web3.addKeystoreManager(keystoreManager)
+//                let balance = walletManagement!["balance"] as? String
+//                self.balanceLabel.text = ("$" + balance! + ".00")
+//            } else {
+//                print("it failed")
+//            }
+//        }
+//
+//        balanceLabel.text = "$"  //+ balance + "asd"
     }
+    
+    
+
 
     /*
     // MARK: - Navigation

@@ -21,6 +21,7 @@ class SlotPopUpViewController: UIViewController {
         let name: String
         let isHD: Bool
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +46,9 @@ class SlotPopUpViewController: UIViewController {
     
     
     func initializeTranscation() {
-        let key = WalletViewController().privKeyField.text!
         let password = passwordField.text!
-        //let key = "L2HRewdY7SSpB2jjKq6mwLes86umkWBuUSPZWE35Q8Pbbr8wVyss124sf124dfsf" // Some private key
-        let formattedKey = key.trimmingCharacters(in: .whitespacesAndNewlines)
-        let dataKey = Data.fromHex(formattedKey)!
-        let keystore = try! EthereumKeystoreV3(privateKey: dataKey, password: password)!
-        let name = "New Wallet"
-        let keyData = try! JSONEncoder().encode(keystore.keystoreParams)
-        let address = keystore.addresses!.first!.address
-        let wallet = Wallet(address: address, data: keyData, name: name, isHD: false)
+        
+        let wallet = Wallet(address: WalletViewController.Information.address2, data: WalletViewController.Information.data2, name: WalletViewController.Information.name2, isHD: false)
         
         let data = wallet.data
         let keystoreManager: KeystoreManager
@@ -71,13 +65,13 @@ class SlotPopUpViewController: UIViewController {
         
         web3.addKeystoreManager(keystoreManager)
         
-        //get user balance
-        let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
-        let balanceResult = try! web3.eth.getBalance(address: walletAddress)
-        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
+//        //get user balance
+//        let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
+//        let balanceResult = try! web3.eth.getBalance(address: walletAddress)
+//        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
         
         let value: String = "1.0" // In Ether
-       // let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
+        let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
         //sends the money to our public address
         let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
@@ -94,6 +88,12 @@ class SlotPopUpViewController: UIViewController {
             transactionOptions: options)!
         
         //send transacation
+        //let password = "web3swift"
+        
+        //let result = try! transaction.call()
+        let result = try! tx.send(password: password)
+        print(result)
+        
         //let password = passwordField.text!
         
     }

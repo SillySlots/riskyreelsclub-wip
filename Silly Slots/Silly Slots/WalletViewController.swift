@@ -19,7 +19,7 @@ class WalletViewController: UIViewController {
     @IBOutlet weak var confirmPasswordField: UITextField!
     
     @IBOutlet weak var privKeyField: UITextField!
-    
+
     
     
     struct Wallet {
@@ -27,6 +27,16 @@ class WalletViewController: UIViewController {
         let data: Data
         let name: String
         let isHD: Bool
+    }
+    
+
+    
+    
+    struct Information {
+        static var address2 = String()
+        static var data2 = Data()
+        static var name2 = String()
+        static var isHD2 = Bool()
     }
 
     struct HDKey {
@@ -110,23 +120,16 @@ class WalletViewController: UIViewController {
             let balanceResult = try! web3.eth.getBalance(address: walletAddress)
             let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
             
-            //save password and balance to parse
-            let walletStuff = PFObject(className:"walletManagement")
-            walletStuff["password"] = password
-            walletStuff["balance"] = balanceString
-            walletStuff.saveInBackground { (succeeded, error)  in
-                if (succeeded) {
-                    print("password and balance saved")
-                    // The object has been saved.
-                } else {
-                    print("password and balance has not been saved")
-                    // There was a problem, check error.description
-                }
-            }
+            
+            Information.address2 = address
+            Information.data2 = data
+            Information.name2 = name
+            Information.isHD2 = false
             
             
-            print(balanceString)
-            print("it should have printed")
+            print( Information.address2)
+            
+           
         }
         
         

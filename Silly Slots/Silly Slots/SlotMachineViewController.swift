@@ -346,7 +346,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //var time = true
         //verbose = true
         
-       // let web3 = Web3.InfuraRinkebyWeb3()
+        let web3 = Web3.InfuraRinkebyWeb3()
        // web3.addKeystoreManager(keystoreManager)
         
 //        print(count)
