@@ -16,6 +16,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var spinButton: UIButton!
     @IBOutlet weak var slotPickerView: UIPickerView!
     @IBOutlet weak var resultLabel: UILabel!
+    let defaults = UserDefaults.standard
     
     var winFlag: Bool = false
     var bounds    = CGRect.zero
@@ -51,7 +52,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var treasure = UIImage(named: "treasure.png")!
     //treasure = resizeImage(image: treasure, targetSize: size)!
     
-    
+    var betConfirm = false
     var imageArray2: [UIImage] = [
           UIImage(named: "dollarSign.png")!,
           UIImage(named: "g.png")!,
@@ -69,7 +70,15 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         loadData()
         setupUI()
         spinSlots()
+        
+        print(" BET CONFIRMED STATUS \(defaults.bool(forKey: "betConfirmed"))")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        defaults.synchronize()
+    }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
@@ -257,16 +266,16 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
        // let row0=slotPickerView.selectedRow(inComponent: 0)
        // let comp0 = slotPickerView.view(forRow: row0, forComponent: 0) as? UIImageView
         
-       let comp0 = stringArray[0]
+        let comp0 = stringArray[0]
         let comp1 = stringArray[1]
         let comp2 = stringArray[2]
         let comp3 = stringArray[3]
         
         
-//        print("\(comp0)")
-//        print("\(comp1)")
-//        print("\(comp2)")
-//        print("\(comp3)")
+        print("\(comp0)")
+        print("\(comp1)")
+        print("\(comp2)")
+        print("\(comp3)")
         //var image0 = comp0?.image
        // image0?.cgImage
         
@@ -296,11 +305,14 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         if (comp0.isEqual(comp1) && comp1.isEqual(comp2) && comp2.isEqual(comp3)){
             print("they are the same")
             resultLabel.text = "W I N N E R !"
+            defaults.set(false, forKey: "betConfirmed")
+            defaults.synchronize()
         }
         else if(comp0.isEqual(comp1) || comp1.isEqual(comp2) || comp2.isEqual(comp3)){
             print("they are different")
             resultLabel.text = "L O S E R !"
-
+//            defaults.set(true, forKey: "betConfirmed")
+//            defaults.synchronize()
         }
         
 //        if (image0?.cgImage ==  image1?.cgImage &&  image1?.cgImage == image2?.cgImage && image2?.cgImage == image3?.cgImage){
@@ -329,6 +341,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
                    completion: nil )
     }
     var count = 0
+    
     @IBAction func onSpin(_ sender: Any) {
         //var time = true
         //verbose = true
@@ -336,23 +349,42 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
        // let web3 = Web3.InfuraRinkebyWeb3()
        // web3.addKeystoreManager(keystoreManager)
         
-        print(count)
-        if(count == 0) {
+//        print(count)
+//        if(count == 0) {
+        
+//        if (defaults.integer(forKey: "countBet") == 0){
+//            print("\(defaults.integer(forKey: "countBet"))")
+//            
+//            self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
+//        }
+//        else {
+//            spinSlots()
+//            checkWinOrLose()
+//            animateButton()
+//        }
+        if !(defaults.bool(forKey: "betConfirmed")){
+            print("\(defaults.bool(forKey: "betConfirmed"))")
         self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
-       let confirmation =  SlotPopUpViewController().confirmBool
-            print(confirmation)
-        if(confirmation == true) {
+          //  let confirmation =  SlotPopUpViewController().confirmBool
+            
+            
+            //print(confirmation)
+        }
+        else if (defaults.bool(forKey: "betConfirmed")) {
+            
+            print("\(defaults.bool(forKey: "betConfirmed"))")
             //count = count + 1
             spinSlots()
             checkWinOrLose()
             animateButton()
         }
             //time = false
-        } else {
-            spinSlots()
-            checkWinOrLose()
-            animateButton()
-        }
+        
+//        else {
+//            spinSlots()
+//            checkWinOrLose()
+//            animateButton()
+//        }
         //insert pop up here
 //            spinSlots()
 //            checkWinOrLose()

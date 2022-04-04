@@ -11,8 +11,10 @@ import web3swift
 class SlotPopUpViewController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
-    
+    let defaults = UserDefaults.standard
     var confirmBool = false
+    var count = 0
+    
     struct Wallet {
         let address: String
         let data: Data
@@ -22,10 +24,23 @@ class SlotPopUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaults.set(false, forKey: "betConfirmed")
+        defaults.set(1, forKey: "countBet")
         
-        //initializeTranscation()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+      //  defaults.set(1, forKey: "countBet")
+        defaults.set(false, forKey: "betConfirmed")
+        defaults.synchronize()
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did disappear")
+        defaults.set(true, forKey: "betConfirmed")
+        defaults.synchronize()
     }
     
     
@@ -86,8 +101,13 @@ class SlotPopUpViewController: UIViewController {
     
     
     @IBAction func confirmAction(_ sender: Any) {
-        confirmBool = true
+       // self.dismiss(animated: true, completion: nil)
+        
+        defaults.set(true, forKey: "betConfirmed")
+//        confirmBool = true
+//        count = 1
         self.performSegue(withIdentifier: "returnSegue", sender: nil)
+        defaults.synchronize()
     }
     
     
