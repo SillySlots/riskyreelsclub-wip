@@ -12,7 +12,7 @@ class SlotPopUpViewController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
     
-    
+    var confirmBool = false
     struct Wallet {
         let address: String
         let data: Data
@@ -23,7 +23,7 @@ class SlotPopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initializeTranscation()
+        //initializeTranscation()
 
         // Do any additional setup after loading the view.
     }
@@ -83,7 +83,10 @@ class SlotPopUpViewController: UIViewController {
         
     }
     
-    @IBAction func onConfirm(_ sender: Any) {
+    
+    
+    @IBAction func confirmAction(_ sender: Any) {
+        confirmBool = true
         self.performSegue(withIdentifier: "returnSegue", sender: nil)
     }
     

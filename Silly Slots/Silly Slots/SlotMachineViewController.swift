@@ -30,6 +30,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     let size = CGSize(width: 5, height: 5)
     //var verbose = Bool()
     var verbose = false
+    var time = true
     
     var dollarsign = UIImage(named: "dollarSign.png")!
     //dollarsign =  resizeImage(image: dollarsign, targetSize: size)!
@@ -290,9 +291,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //print(" comp0  \(comp0) comp 1  \(comp1)")
         
         //pickerView(slotPickerView, didSelectRow: 0, inComponent: 0)
-        let verbose1 = comp0.isEqual(comp1)
-        let verbose2 = comp1.isEqual(comp2)
-        let verbose3 = comp2.isEqual(comp3)
 
        
         if (comp0.isEqual(comp1) && comp1.isEqual(comp2) && comp2.isEqual(comp3)){
@@ -330,19 +328,35 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
                    animations: { self.spinButton.bounds = shrinkSize },
                    completion: nil )
     }
-    
+    var count = 0
     @IBAction func onSpin(_ sender: Any) {
+        //var time = true
         //verbose = true
         
        // let web3 = Web3.InfuraRinkebyWeb3()
        // web3.addKeystoreManager(keystoreManager)
         
-        
-        
-        //insert pop up here
+        print(count)
+        if(count == 0) {
+        self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
+       let confirmation =  SlotPopUpViewController().confirmBool
+            print(confirmation)
+        if(confirmation == true) {
+            //count = count + 1
             spinSlots()
             checkWinOrLose()
             animateButton()
+        }
+            //time = false
+        } else {
+            spinSlots()
+            checkWinOrLose()
+            animateButton()
+        }
+        //insert pop up here
+//            spinSlots()
+//            checkWinOrLose()
+//            animateButton()
         }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)

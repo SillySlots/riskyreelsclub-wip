@@ -70,7 +70,7 @@
             <objects>
                 <viewController storyboardIdentifier="SlotMachineViewController" id="m2b-OT-V3C" customClass="SlotMachineViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Hp-fY-VF8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" image="altbackground" translatesAutoresizingMaskIntoConstraints="NO" id="FGr-0W-eky">
@@ -78,7 +78,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-20-7yN">
-                                <rect key="frame" x="123" y="734" width="168" height="74"/>
+                                <rect key="frame" x="123" y="714" width="168" height="74"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="S P I N">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="50"/>
@@ -89,7 +89,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vz2-Lr-tIS">
-                                <rect key="frame" x="40" y="174" width="334" height="538"/>
+                                <rect key="frame" x="40" y="130" width="334" height="538"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="538" id="IBf-1I-Gbs"/>
                                 </constraints>
@@ -125,7 +125,7 @@
                         <outlet property="resultLabel" destination="mXA-Qp-VVw" id="edu-N3-WUg"/>
                         <outlet property="slotPickerView" destination="vz2-Lr-tIS" id="Zae-x9-dGd"/>
                         <outlet property="spinButton" destination="KBx-20-7yN" id="FqO-76-o4l"/>
-                        <segue destination="R30-xu-3ey" kind="show" identifier="disclaimerSegue" id="Czl-Ja-1AA"/>
+                        <segue destination="R30-xu-3ey" kind="presentation" identifier="disclaimerSegue" id="b7d-xJ-p7U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lp-uZ-it2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -288,7 +288,7 @@
             <objects>
                 <viewController id="R30-xu-3ey" customClass="SlotPopUpViewController" customModule="Silly_Slots" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ruH-lP-rFC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-i7-Vlf">
@@ -323,7 +323,7 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="onConfirm:" destination="R30-xu-3ey" eventType="touchUpInside" id="ov3-0N-AxQ"/>
+                                            <action selector="confirmAction:" destination="R30-xu-3ey" eventType="touchUpInside" id="fuF-LA-HDa"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cs-Wg-TNb">
@@ -349,9 +349,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="zda-cm-5hM"/>
                     <connections>
-                        <outlet property="confirmButton" destination="GTh-u3-eQM" id="cgk-5S-5D4"/>
                         <outlet property="passwordField" destination="Ccm-SW-4oz" id="dUm-tx-VCu"/>
-                        <segue destination="m2b-OT-V3C" kind="show" identifier="returnSegue" id="HbH-9K-eIV"/>
+                        <segue destination="m2b-OT-V3C" kind="presentation" identifier="returnSegue" id="pwM-KR-ZgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N53-l4-Iat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -625,9 +624,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Czl-Ja-1AA"/>
         <segue reference="T3V-mL-xfa"/>
-        <segue reference="HbH-9K-eIV"/>
+        <segue reference="pwM-KR-ZgT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="altbackground" width="1400" height="2000"/>
