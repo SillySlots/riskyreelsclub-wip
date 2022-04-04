@@ -28,6 +28,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var stringArray = [String(), String(), String(), String()]
     
     let size = CGSize(width: 5, height: 5)
+    //var verbose = Bool()
+    var verbose = false
     
     var dollarsign = UIImage(named: "dollarSign.png")!
     //dollarsign =  resizeImage(image: dollarsign, targetSize: size)!
@@ -113,8 +115,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
         
         randomSet = [["myImage":"ape"], ["myImage":"banana"], ["myImage":"rug"], ["myImage":"diamond"], ["myImage":"treasure"],["myImage":"dollarsign"]]
-
-        func randomiseSet () -> UIImage{
+        var i = 0
+        func randomiseSet (validate: Bool) -> UIImage{
             let randomNumber:Int = Int(arc4random_uniform(5))
             //print("about to print")
             //print("\(randomSet[randomNumber]["myImage"]!)")
@@ -122,6 +124,18 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
             let size = CGSize(width: 80, height: 80)
             image = resizeImage(image: image, targetSize: size)!
+            
+            if(validate) {
+//                stringArray[0] = randomSet[randomNumber]["my Image"]!
+                if(i < stringArray.count ) {
+                let appendString = (randomSet[randomNumber]["myImage"]!)
+                //print(appendString)
+                
+                stringArray[i] = appendString
+                //print(stringArray.count)
+                i = i + 1
+                }
+            }
             
            return image
         }
@@ -131,15 +145,13 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         switch component {
             case 0:
-          
-            let randomNumber:Int = Int(arc4random_uniform(5))
-            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
-            let size = CGSize(width: 80, height: 80)
-            image = resizeImage(image: image, targetSize: size)!
-            //let image =  randomiseSet()
-            stringArray[0] =  randomSet[randomNumber]["myImage"]!
+            //verbose = true
+            let image =  randomiseSet(validate: true)
            imageView = UIImageView(image: image)
             componentsFromRow[0] = image
+            
+            
+            
             //imagesArray1[(Int)(dataArray[1][row])]
           //  K.imageArray[(Int)(dataArray[0][row])]
                // imageArray2[(Int)(dataArray[0][row])]
@@ -149,31 +161,19 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             
             case 1 :
             
-            let randomNumber:Int = Int(arc4random_uniform(5))
-            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
-            let size = CGSize(width: 80, height: 80)
-            image = resizeImage(image: image, targetSize: size)!
-            //let image =  randomiseSet()
-            stringArray[1] =  randomSet[randomNumber]["myImage"]!
+            //verbose = true
+            let image =  randomiseSet(validate: true)
            imageView = UIImageView(image: image)
             componentsFromRow[1] = image
             
             case 2 :
-            let randomNumber:Int = Int(arc4random_uniform(5))
-            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
-            let size = CGSize(width: 80, height: 80)
-            image = resizeImage(image: image, targetSize: size)!
-            //let image =  randomiseSet()
-            stringArray[2] =  randomSet[randomNumber]["myImage"]!
+            //verbose = true
+            let image =  randomiseSet(validate: true)
            imageView = UIImageView(image: image)
             componentsFromRow[2] = image
             case 3 :
-            let randomNumber:Int = Int(arc4random_uniform(5))
-            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
-            let size = CGSize(width: 80, height: 80)
-            image = resizeImage(image: image, targetSize: size)!
-            //let image =  randomiseSet()
-            stringArray[3] =  randomSet[randomNumber]["myImage"]!
+           // verbose = true
+            let image =  randomiseSet(validate: true)
            imageView = UIImageView(image: image)
             componentsFromRow[3] = image
             
@@ -262,10 +262,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let comp3 = stringArray[3]
         
         
-        print("\(comp0)")
-        print("\(comp1)")
-        print("\(comp2)")
-        print("\(comp3)")
+//        print("\(comp0)")
+//        print("\(comp1)")
+//        print("\(comp2)")
+//        print("\(comp3)")
         //var image0 = comp0?.image
        // image0?.cgImage
         
@@ -293,12 +293,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let verbose1 = comp0.isEqual(comp1)
         let verbose2 = comp1.isEqual(comp2)
         let verbose3 = comp2.isEqual(comp3)
-        
-        
-        
-        print(verbose1)
-        print(verbose2)
-        print(verbose3)
 
        
         if (comp0.isEqual(comp1) && comp1.isEqual(comp2) && comp2.isEqual(comp3)){
@@ -338,6 +332,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     @IBAction func onSpin(_ sender: Any) {
+        //verbose = true
         
        // let web3 = Web3.InfuraRinkebyWeb3()
        // web3.addKeystoreManager(keystoreManager)
