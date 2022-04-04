@@ -1,7 +1,7 @@
 Original App Design Project -
 ===
 
-# Silly Slots
+# Risky Reels Club
 
 ## Table of Contents
 1. [Overview](#Overview)
