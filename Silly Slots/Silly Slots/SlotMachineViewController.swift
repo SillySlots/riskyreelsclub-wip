@@ -44,23 +44,14 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     var dollarsign = UIImage(named: "dollarSign.png")!
-    //dollarsign =  resizeImage(image: dollarsign, targetSize: size)!
     var wpng = UIImage(named: "w.png")!
-   // wpng = resizeImage(image: wpng, targetSize: size)!
     var gpng = UIImage(named: "g.png")!
-   // gpng = resizeImage(image: gpng, targetSize: size)!
     var ipng = UIImage(named: "i.png")!
-    //ipng = resizeImage(image: ipng, targetSize: size)!
     var ape = UIImage(named: "ape.png")!
-    //ape =  resizeImage(image: ape, targetSize: size)!
     var rug = UIImage(named: "rug.png")!
-   // rug = resizeImage(image: rug, targetSize: size)!
     var diamond = UIImage(named: "diamond.png")!
-    //diamond = resizeImage(image: diamond, targetSize: size)!
     var banana = UIImage(named: "banana.png")!
-   // banana = resizeImage(image: banana, targetSize: size)!
     var treasure = UIImage(named: "treasure.png")!
-    //treasure = resizeImage(image: treasure, targetSize: size)!
     
     var betConfirm = false
     var imageArray2: [UIImage] = [
