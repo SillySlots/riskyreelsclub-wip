@@ -443,8 +443,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         web3.addKeystoreManager(keystoreManager)
         
-        
-        let value: String = "1.0" // In Ether
+        let value = SlotPopUpViewController.Verbose.amount
+        //let value: String = "1.0" // In Ether
         let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
         //sends the money to our public address
         let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!

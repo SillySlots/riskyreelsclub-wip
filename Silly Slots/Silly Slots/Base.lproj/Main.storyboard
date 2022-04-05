@@ -334,13 +334,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price: 1.0 ETH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-ev-bRq">
-                                        <rect key="frame" x="79" y="83" width="200" height="39"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Bet:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-ev-bRq">
+                                        <rect key="frame" x="63" y="83" width="130" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B1V-x2-kKZ">
+                                        <rect key="frame" x="214" y="85" width="97" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             </view>
@@ -349,6 +355,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zda-cm-5hM"/>
                     <connections>
+                        <outlet property="betField" destination="B1V-x2-kKZ" id="qcR-ca-RAS"/>
                         <outlet property="passwordField" destination="Ccm-SW-4oz" id="dUm-tx-VCu"/>
                         <segue destination="m2b-OT-V3C" kind="presentation" identifier="returnSegue" id="pwM-KR-ZgT"/>
                     </connections>

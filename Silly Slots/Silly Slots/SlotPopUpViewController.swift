@@ -11,6 +11,10 @@ import web3swift
 class SlotPopUpViewController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var betField: UITextField!
+    
+    
     let defaults = UserDefaults.standard
     var confirmBool = false
     var count = 0
@@ -25,6 +29,7 @@ class SlotPopUpViewController: UIViewController {
     struct Verbose {
         static var validate = true
         static var password = String()
+        static var amount = String()
     }
     
 
@@ -51,66 +56,12 @@ class SlotPopUpViewController: UIViewController {
     }
     
     
-    func initializeTranscation() {
-        
-        
-        
-        
-//        let wallet = Wallet(address: WalletViewController.Information.address2, data: WalletViewController.Information.data2, name: WalletViewController.Information.name2, isHD: false)
-//        
-//        let data = wallet.data
-//        let keystoreManager: KeystoreManager
-//        if wallet.isHD {
-//            let keystore = BIP32Keystore(data)!
-//            keystoreManager = KeystoreManager([keystore])
-//        } else {
-//            let keystore = EthereumKeystoreV3(data)!
-//            keystoreManager = KeystoreManager([keystore])
-//        }
-//        
-//        
-//        let web3 = Web3.InfuraRinkebyWeb3()
-//        
-//        web3.addKeystoreManager(keystoreManager)
-//        
-////        //get user balance
-////        let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
-////        let balanceResult = try! web3.eth.getBalance(address: walletAddress)
-////        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
-//        
-//        let value: String = "1.0" // In Ether
-//        let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
-//        //sends the money to our public address
-//        let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!
-//        let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
-//        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
-//        var options = TransactionOptions.defaultOptions
-//        options.value = amount
-//        options.from = walletAddress
-//        options.gasPrice = .automatic
-//        options.gasLimit = .automatic
-//        let tx = contract.write(
-//            "fallback",
-//            parameters: [AnyObject](),
-//            extraData: Data(),
-//            transactionOptions: options)!
-//        
-//        //send transacation
-//        //let password = "web3swift"
-//        
-//        //let result = try! transaction.call()
-//        let result = try! tx.send(password: password)
-//        print(result)
-//        
-        //let password = passwordField.text!
-        
-    }
     
     
     
     @IBAction func confirmAction(_ sender: Any) {
        
-        print(passwordField.text!)
+        Verbose.amount = betField.text!
         Verbose.password = passwordField.text!
         
         self.dismiss(animated: true, completion: nil)
