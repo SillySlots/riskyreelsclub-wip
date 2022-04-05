@@ -348,7 +348,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func initializeTranscation() -> Bool{
         let password = SlotPopUpViewController.Verbose.password
         
-        print(password)
+       // print(password)
         
         
         
