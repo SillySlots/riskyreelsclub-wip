@@ -468,7 +468,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         
         
-        let result = try! tx.send(password: password) throws
+        let result = try! tx.send(password: password) 
         //let result2 = try! transaction.call()
         print(result)
         
