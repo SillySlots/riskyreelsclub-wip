@@ -40,6 +40,9 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let name: String
         let isHD: Bool
     }
+    struct ImportantVals {
+        static var privKey = String()
+    }
     
     var dollarsign = UIImage(named: "dollarSign.png")!
     //dollarsign =  resizeImage(image: dollarsign, targetSize: size)!
@@ -360,6 +363,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBAction func onSpin(_ sender: Any) {
         //var time = true
         //verbose = true
+        
+        let password = SlotPopUpViewController.Verbose.password
+        
+        print(password)
         let completedTranscation = initializeTranscation()
         
         if(completedTranscation == true) {
@@ -406,12 +413,16 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         {
             let location = randomSet[row]
             print(location)
+            
+            
 
         }
     
     
     func initializeTranscation() -> Bool{
         let password = SlotPopUpViewController.Verbose.password
+        
+        print(password)
         
         
         
@@ -432,10 +443,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         web3.addKeystoreManager(keystoreManager)
         
-//        //get user balance
-//        let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
-//        let balanceResult = try! web3.eth.getBalance(address: walletAddress)
-//        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
         
         let value: String = "1.0" // In Ether
         let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
@@ -444,7 +451,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
         let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
         var options = TransactionOptions.defaultOptions
-        options.value = amount
+        //options.value = amount
         options.from = walletAddress
         options.gasPrice = .automatic
         options.gasLimit = .automatic
@@ -458,17 +465,31 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //let password = "web3swift"
         
         //let result = try! transaction.call()
-//        let result = try! tx.send(password: password)
-//        print(result)
-//        if(result != nil) {
-//            return true
-//        } else {
-//            return false
-//        }
+        
+        
+        
+        let result = try! tx.send(password: password) throws
+        //let result2 = try! transaction.call()
+        print(result)
+        
+        
+        
+        //contract.
+        
+//        let ethereumAddress = EthereumAddress(wallet.address)!
+//        let pkData = try! keystoreManager.UNSAFE_getPrivateKeyData(password: password, account: ethereumAddress).toHexString()
+//        ImportantVals.privKey = pkData
+        
+        return true
+        
+        
         
         
         //let password = passwordField.text!
-        return true
+       // return true
     }
+    
+    
+
     }
 

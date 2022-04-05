@@ -33,6 +33,7 @@ class SlotPopUpViewController: UIViewController {
         defaults.set(false, forKey: "betConfirmed")
         defaults.set(1, forKey: "countBet")
         
+        
 
         // Do any additional setup after loading the view.
     }
@@ -51,7 +52,7 @@ class SlotPopUpViewController: UIViewController {
     
     
     func initializeTranscation() {
-        Verbose.password = passwordField.text!
+        
         
         
         
@@ -108,7 +109,11 @@ class SlotPopUpViewController: UIViewController {
     
     
     @IBAction func confirmAction(_ sender: Any) {
-       self.dismiss(animated: true, completion: nil)
+       
+        print(passwordField.text!)
+        Verbose.password = passwordField.text!
+        
+        self.dismiss(animated: true, completion: nil)
         
 //        defaults.set(true, forKey: "betConfirmed")
 ////        confirmBool = true
