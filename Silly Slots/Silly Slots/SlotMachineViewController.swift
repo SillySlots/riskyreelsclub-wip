@@ -489,7 +489,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //let result2 = try! transaction.call()
         //print(result)
         } catch {
-            
+            displayAlert()
         }
         
         
