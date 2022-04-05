@@ -383,7 +383,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         let password = SlotPopUpViewController.Verbose.password
         
-        print(password)
+       // print(password)
         let completedTranscation = initializeTranscation()
         
         if(completedTranscation == true) {
@@ -486,10 +486,13 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         do {
          try tx.send(password: password)
+            
+            return true
         //let result2 = try! transaction.call()
         //print(result)
         } catch {
             displayAlert()
+            return false
         }
         
         
@@ -500,7 +503,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
 //        let pkData = try! keystoreManager.UNSAFE_getPrivateKeyData(password: password, account: ethereumAddress).toHexString()
 //        ImportantVals.privKey = pkData
         
-        return true
+        //return true
         
         
         
