@@ -33,6 +33,14 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var verbose = false
     var time = true
     
+    
+    struct Wallet {
+        let address: String
+        let data: Data
+        let name: String
+        let isHD: Bool
+    }
+    
     var dollarsign = UIImage(named: "dollarSign.png")!
     //dollarsign =  resizeImage(image: dollarsign, targetSize: size)!
     var wpng = UIImage(named: "w.png")!
@@ -67,6 +75,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         super.viewDidLoad()
         slotPickerView.delegate   = self
         slotPickerView.dataSource = self
+        disclaimer()
         loadData()
         setupUI()
         spinSlots()
@@ -342,11 +351,22 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     var count = 0
     
+    
+    func disclaimer() {
+        self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
+        
+    }
+    
     @IBAction func onSpin(_ sender: Any) {
         //var time = true
         //verbose = true
+        let completedTranscation = initializeTranscation()
         
-        let web3 = Web3.InfuraRinkebyWeb3()
+        if(completedTranscation == true) {
+        spinSlots()
+        checkWinOrLose()
+        animateButton()
+        }
        // web3.addKeystoreManager(keystoreManager)
         
 //        print(count)
@@ -362,33 +382,24 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
 //            checkWinOrLose()
 //            animateButton()
 //        }
-        if !(defaults.bool(forKey: "betConfirmed")){
-            print("\(defaults.bool(forKey: "betConfirmed"))")
-        self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
-          //  let confirmation =  SlotPopUpViewController().confirmBool
-            
-            
-            //print(confirmation)
-        }
-        else if (defaults.bool(forKey: "betConfirmed")) {
-            
-            print("\(defaults.bool(forKey: "betConfirmed"))")
-            //count = count + 1
-            spinSlots()
-            checkWinOrLose()
-            animateButton()
-        }
-            //time = false
-        
-//        else {
+//        if !(defaults.bool(forKey: "betConfirmed")){
+//            print("\(defaults.bool(forKey: "betConfirmed"))")
+//        self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
+//          //  let confirmation =  SlotPopUpViewController().confirmBool
+//
+//
+//            //print(confirmation)
+//        }
+//        else if (defaults.bool(forKey: "betConfirmed")) {
+//
+//            print("\(defaults.bool(forKey: "betConfirmed"))")
+//            //count = count + 1
 //            spinSlots()
 //            checkWinOrLose()
 //            animateButton()
 //        }
-        //insert pop up here
-//            spinSlots()
-//            checkWinOrLose()
-//            animateButton()
+            //time = false
+        
         }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
@@ -397,5 +408,67 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             print(location)
 
         }
+    
+    
+    func initializeTranscation() -> Bool{
+        let password = SlotPopUpViewController.Verbose.password
+        
+        
+        
+        let wallet = Wallet(address: WalletViewController.Information.address2, data: WalletViewController.Information.data2, name: WalletViewController.Information.name2, isHD: false)
+        
+        let data = wallet.data
+        let keystoreManager: KeystoreManager
+        if wallet.isHD {
+            let keystore = BIP32Keystore(data)!
+            keystoreManager = KeystoreManager([keystore])
+        } else {
+            let keystore = EthereumKeystoreV3(data)!
+            keystoreManager = KeystoreManager([keystore])
+        }
+        
+        
+        let web3 = Web3.InfuraRinkebyWeb3()
+        
+        web3.addKeystoreManager(keystoreManager)
+        
+//        //get user balance
+//        let walletAddress = EthereumAddress(wallet.address)! // Address which balance we want to know
+//        let balanceResult = try! web3.eth.getBalance(address: walletAddress)
+//        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
+        
+        let value: String = "1.0" // In Ether
+        let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
+        //sends the money to our public address
+        let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!
+        let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
+        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
+        var options = TransactionOptions.defaultOptions
+        options.value = amount
+        options.from = walletAddress
+        options.gasPrice = .automatic
+        options.gasLimit = .automatic
+        let tx = contract.write(
+            "fallback",
+            parameters: [AnyObject](),
+            extraData: Data(),
+            transactionOptions: options)!
+        
+        //send transacation
+        //let password = "web3swift"
+        
+        //let result = try! transaction.call()
+//        let result = try! tx.send(password: password)
+//        print(result)
+//        if(result != nil) {
+//            return true
+//        } else {
+//            return false
+//        }
+        
+        
+        //let password = passwordField.text!
+        return true
+    }
     }
 
