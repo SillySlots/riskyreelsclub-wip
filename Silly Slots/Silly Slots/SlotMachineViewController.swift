@@ -33,7 +33,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var verbose = false
     var time = true
     
-    
     struct Wallet {
         let address: String
         let data: Data
@@ -78,10 +77,12 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         super.viewDidLoad()
         slotPickerView.delegate   = self
         slotPickerView.dataSource = self
+        displayAlert()
         disclaimer()
         loadData()
         setupUI()
         spinSlots()
+       
         
         print(" BET CONFIRMED STATUS \(defaults.bool(forKey: "betConfirmed"))")
     }
@@ -91,6 +92,22 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         defaults.synchronize()
     }
     
+
+        func displayAlert (){
+            let dialogMessage = UIAlertController(title: "Attention", message: "Insufficient funds to play.", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                        print("Ok button tapped")
+                        self.deleteRecord()
+                    })
+            dialogMessage.addAction(ok)
+            self.present(dialogMessage, animated: true, completion: nil)
+        }
+        
+        func deleteRecord()
+            {
+                print("Delete record function called")
+            }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
