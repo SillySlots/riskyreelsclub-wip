@@ -339,7 +339,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
        // print(password)
         let completedTranscation = initializeTranscation()
-        
+        //let completedTranscation = true
         if(completedTranscation == true) {
         spinSlots()
         checkWinOrLose()

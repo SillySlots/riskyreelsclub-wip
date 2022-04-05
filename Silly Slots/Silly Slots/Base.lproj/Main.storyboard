@@ -106,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hji-Xr-GkI">
-                                <rect key="frame" x="262" y="20" width="132" height="46"/>
+                                <rect key="frame" x="262" y="51" width="132" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Configure Bet">
@@ -342,7 +342,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cs-Wg-TNb">
                                         <rect key="frame" x="26" y="130" width="323" height="218"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Risky Reels Club is intended to be a fun experience for our players. Please play responsibily. Do not bet ETH that you do not feel comfortable parting with! Before you bet ETH, understand gas fees. Current average gas fee: $4.85. If you plave to swap or transfer your ETH, purchase extra to cover gas fees. Gas fees for transactions are seperate from the cost of purchasing ETH.</string>
+                                        <string key="text">Risky Reels Club is intended to be a fun experience for our players. Please play responsibily. Before you bet ETH, understand the current gas fee is $4.85 and will be included in your transcation.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -668,7 +668,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="b7d-xJ-p7U"/>
         <segue reference="T3V-mL-xfa"/>
         <segue reference="pwM-KR-ZgT"/>
     </inferredMetricsTieBreakers>
