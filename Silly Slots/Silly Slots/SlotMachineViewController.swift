@@ -16,6 +16,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var spinButton: UIButton!
     @IBOutlet weak var slotPickerView: UIPickerView!
     @IBOutlet weak var resultLabel: UILabel!
+    
+    
     let defaults = UserDefaults.standard
     
     var winFlag: Bool = false
@@ -221,6 +223,9 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
     
+    
+    
+    
     func setupUI() {
         bounds = spinButton.bounds
         setTrim()
@@ -251,6 +256,13 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             slotPickerView.selectRow(Int.random(in: 4...97), inComponent: i, animated: true)
         }
     }
+    
+    
+    @IBAction func onConfigureBet(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
