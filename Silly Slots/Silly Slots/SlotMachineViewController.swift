@@ -77,7 +77,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         super.viewDidLoad()
         slotPickerView.delegate   = self
         slotPickerView.dataSource = self
-        displayAlert()
+       // displayAlert()
         disclaimer()
         loadData()
         setupUI()
