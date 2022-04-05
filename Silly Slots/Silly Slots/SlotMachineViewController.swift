@@ -188,16 +188,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let image =  randomiseSet(validate: true)
            imageView = UIImageView(image: image)
             componentsFromRow[0] = image
-            
-            
-            
-            //imagesArray1[(Int)(dataArray[1][row])]
-          //  K.imageArray[(Int)(dataArray[0][row])]
-               // imageArray2[(Int)(dataArray[0][row])]
-          // myImageView =  UIImageView(image: UIImage(named: "dollarSign.png"))
-           
-            
-            
             case 1 :
             
             //verbose = true
@@ -278,23 +268,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     
     func checkWinOrLose() {
-//        let image0 = slotPickerView.selectedRow(inComponent: 0)
-//        let image1 = slotPickerView.selectedRow(inComponent: 1)
-//        let image2 = slotPickerView.selectedRow(inComponent: 2)
-//        let image3 = slotPickerView.selectedRow(inComponent: 3)
 
-//        let image0 = UIImage.init(imageLiteralResourceName: "ape.png")
-//        let image1 = UIImage.init(imageLiteralResourceName: "banana.png")
-//        let image2 = UIImage.init(imageLiteralResourceName: "diamond.png")
-//        let image3 = UIImage.init(imageLiteralResourceName: "rug.png")
-//        let image4 = UIImage.init(imageLiteralResourceName: "dollarsigns.png")
-//        let image5 = UIImage.init(imageLiteralResourceName: "treasure.png")
-
-//        let comp0 = UIImage.itemProviderVisibilityForRepresentation(withTypeIdentifier: <#T##String#>) slotPickerView.selectedRow(inComponent: 0)
-        //let comp = UIImage.imageAss
-       // let row0=slotPickerView.selectedRow(inComponent: 0)
-       // let comp0 = slotPickerView.view(forRow: row0, forComponent: 0) as? UIImageView
-        
         let comp0 = stringArray[0]
         let comp1 = stringArray[1]
         let comp2 = stringArray[2]
@@ -305,30 +279,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         print("\(comp1)")
         print("\(comp2)")
         print("\(comp3)")
-        //var image0 = comp0?.image
-       // image0?.cgImage
-        
-       // let row1=slotPickerView.selectedRow(inComponent: 1)
-        //let comp1 = slotPickerView.view(forRow: row1, forComponent: 1) as? UIImageView
-        //var image1 = comp1?.image
-        //image1?.cgImage
-        
-       // let row2=slotPickerView.selectedRow(inComponent: 2)
-       // let comp2 = slotPickerView.view(forRow: row2, forComponent: 2) as? UIImageView
-       // var image2 = comp2?.image
-        //image2?.cgImage
-        
-       // let row3=slotPickerView.selectedRow(inComponent: 3)
-        //let comp3 = slotPickerView.view(forRow: row3, forComponent: 3) as? UIImageView
-        //var image3 = comp3?.image
-        
-        //print(slotPickerView.numberOfComponents)
-        
-        //image3?.cgImage
-        
-        //print(" comp0  \(comp0) comp 1  \(comp1)")
-        
-        //pickerView(slotPickerView, didSelectRow: 0, inComponent: 0)
+       
 
        
         if (comp0.isEqual(comp1) && comp1.isEqual(comp2) && comp2.isEqual(comp3)){
@@ -340,17 +291,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         else if(comp0.isEqual(comp1) || comp1.isEqual(comp2) || comp2.isEqual(comp3)){
             print("they are different")
             resultLabel.text = "L O S E R !"
-//            defaults.set(true, forKey: "betConfirmed")
-//            defaults.synchronize()
+
         }
-        
-//        if (image0?.cgImage ==  image1?.cgImage &&  image1?.cgImage == image2?.cgImage && image2?.cgImage == image3?.cgImage){
-//            resultLabel.text = "W I N N E R !"
-//        }
-//        else if(image0?.description == image1?.description || image1?.description == image2?.description || image2?.description == image3?.description){
-//            resultLabel.text = "MONEY BACK"
-//
-//        }
         
         else {
         resultLabel.text = "RISKY REELS CLUB"
@@ -391,38 +333,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         checkWinOrLose()
         animateButton()
         }
-       // web3.addKeystoreManager(keystoreManager)
-        
-//        print(count)
-//        if(count == 0) {
-        
-//        if (defaults.integer(forKey: "countBet") == 0){
-//            print("\(defaults.integer(forKey: "countBet"))")
-//            
-//            self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
-//        }
-//        else {
-//            spinSlots()
-//            checkWinOrLose()
-//            animateButton()
-//        }
-//        if !(defaults.bool(forKey: "betConfirmed")){
-//            print("\(defaults.bool(forKey: "betConfirmed"))")
-//        self.performSegue(withIdentifier: "disclaimerSegue", sender: nil)
-//          //  let confirmation =  SlotPopUpViewController().confirmBool
-//
-//
-//            //print(confirmation)
-//        }
-//        else if (defaults.bool(forKey: "betConfirmed")) {
-//
-//            print("\(defaults.bool(forKey: "betConfirmed"))")
-//            //count = count + 1
-//            spinSlots()
-//            checkWinOrLose()
-//            animateButton()
-//        }
-            //time = false
         
         }
     
@@ -478,11 +388,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             extraData: Data(),
             transactionOptions: options)!
         
-        //send transacation
-        //let password = "web3swift"
-        
-        //let result = try! transaction.call()
-        
         
         do {
          try tx.send(password: password)
@@ -495,21 +400,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             return false
         }
         
-        
-        
-        //contract.
-        
-//        let ethereumAddress = EthereumAddress(wallet.address)!
-//        let pkData = try! keystoreManager.UNSAFE_getPrivateKeyData(password: password, account: ethereumAddress).toHexString()
-//        ImportantVals.privKey = pkData
-        
-        //return true
-        
-        
-        
-        
-        //let password = passwordField.text!
-       // return true
     }
     
     
