@@ -287,6 +287,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             resultLabel.text = "W I N N E R !"
             defaults.set(false, forKey: "betConfirmed")
             defaults.synchronize()
+            
+            let winnerTran = winnerTransaction()
+            
+            
         }
         else if(comp0.isEqual(comp1) || comp1.isEqual(comp2) || comp2.isEqual(comp3)){
             print("they are different")
@@ -354,6 +358,69 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         
         let wallet = Wallet(address: WalletViewController.Information.address2, data: WalletViewController.Information.data2, name: WalletViewController.Information.name2, isHD: false)
+        
+        let data = wallet.data
+        let keystoreManager: KeystoreManager
+        if wallet.isHD {
+            let keystore = BIP32Keystore(data)!
+            keystoreManager = KeystoreManager([keystore])
+        } else {
+            let keystore = EthereumKeystoreV3(data)!
+            keystoreManager = KeystoreManager([keystore])
+        }
+        
+        
+        let web3 = Web3.InfuraRinkebyWeb3()
+        
+        web3.addKeystoreManager(keystoreManager)
+        
+        let value = SlotPopUpViewController.Verbose.amount
+        //let value: String = "1.0" // In Ether
+        let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
+        //sends the money to our public address
+        let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!
+        let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
+        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
+        var options = TransactionOptions.defaultOptions
+        //options.value = amount
+        options.from = walletAddress
+        options.gasPrice = .automatic
+        options.gasLimit = .automatic
+        let tx = contract.write(
+            "fallback",
+            parameters: [AnyObject](),
+            extraData: Data(),
+            transactionOptions: options)!
+        
+        
+        do {
+         try tx.send(password: password)
+            
+            return true
+        //let result2 = try! transaction.call()
+        //print(result)
+        } catch {
+            displayAlert()
+            return false
+        }
+        
+    }
+    
+    func winnerTransaction() -> Bool{
+        let password = "PinkReel439$"
+        
+        let key = "760fe0be6fa677f528072227d3ba1a3a901cf831417252bf8e384474b2490a22" // Some private key
+        let formattedKey = key.trimmingCharacters(in: .whitespacesAndNewlines)
+        let dataKey = Data.fromHex(formattedKey)!
+        let keystore = try! EthereumKeystoreV3(privateKey: dataKey, password: password)!
+        let name = "New Wallet"
+        let keyData = try! JSONEncoder().encode(keystore.keystoreParams)
+        let address = keystore.addresses!.first!.address
+        let wallet = Wallet(address: address, data: keyData, name: name, isHD: false)
+        
+        
+        
+        
         
         let data = wallet.data
         let keystoreManager: KeystoreManager
