@@ -39,8 +39,12 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let name: String
         let isHD: Bool
     }
+    
+
     struct ImportantVals {
         static var privKey = String()
+        static var ourPrivKey = String()
+        static var ourPass = String()
     }
     
     var dollarsign = UIImage(named: "dollarSign.png")!
@@ -345,7 +349,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func initializeTranscation() -> Bool{
         let password = SlotPopUpViewController.Verbose.password
         
-        print(password)
+       // print(password)
         
         
         
@@ -399,9 +403,34 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     func winnerTransaction() -> Bool{
-        let password = "PinkReel439$"
         
-        let key = "760fe0be6fa677f528072227d3ba1a3a901cf831417252bf8e384474b2490a22" // Some private key
+        let wallet2 = Wallet(address: WalletViewController.Information.address2, data: WalletViewController.Information.data2, name: WalletViewController.Information.name2, isHD: false)
+        
+        
+        
+        let query = PFQuery(className:"info")
+        query.getObjectInBackground(withId: "fCmNgfzEQd") { (info, error) in
+                    if error == nil {
+                        
+                        let pass = info!["password"] as? String
+                        let privkey = info!["privAd"] as? String
+                        
+                        ImportantVals.ourPrivKey = privkey!
+                        ImportantVals.ourPass = pass!
+                    } else {
+                        print("it failed")
+                    }
+                }
+   
+
+        
+        let password = ImportantVals.ourPass
+        let key = ImportantVals.ourPrivKey
+        // or use the the non-blocking method findObjectsInBackground
+
+        query.findObjectsInBackground { (results: [PFObject]?, error: Error?) in
+          // do some stuff with results
+        }
         let formattedKey = key.trimmingCharacters(in: .whitespacesAndNewlines)
         let dataKey = Data.fromHex(formattedKey)!
         let keystore = try! EthereumKeystoreV3(privateKey: dataKey, password: password)!
@@ -433,7 +462,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //let value: String = "1.0" // In Ether
         let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
         //sends the money to our public address
-        let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!
+        let toAddress = EthereumAddress(wallet2.address)!
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
         let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
         var options = TransactionOptions.defaultOptions

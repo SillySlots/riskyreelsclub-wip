@@ -56,7 +56,7 @@ class SlotPopUpViewController: UIViewController {
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("view did disappear")
+        //print("view did disappear")
         defaults.set(true, forKey: "betConfirmed")
         defaults.synchronize()
     }
