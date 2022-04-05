@@ -14,6 +14,9 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var modeControl: UISwitch!
     @IBOutlet weak var modeControlLabel: UILabel!
+    @IBOutlet weak var bettingControl: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +24,18 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         if(defaults.bool(forKey: "lightModeEnabled")){
             overrideUserInterfaceStyle = .light
-            
-//            modeControl.setOn(false, animated: true)
         }
         else if !(defaults.bool(forKey: "lightModeEnabled")){
             overrideUserInterfaceStyle = .dark
-           
-//            modeControl.setOn(true, animated: true)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        defaults.set(bettingControl.text!, forKey: "bettingAmount")
+       // defaults.synchronize()
     }
 
     @IBAction func modeSwitchControl(_ sender: Any) {
@@ -60,6 +65,15 @@ class SettingsViewController: UIViewController {
        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
       
        delegate.window?.rootViewController = firstScreenViewController
+    }
+    
+    @IBAction func betAmountUpdated(_ sender: UITextField)
+    {
+        let betAmount = bettingControl.text
+        
+        defaults.set(betAmount, forKey:"bettingAmount")
+        defaults.set(true, forKey:"betUpdated")
+        defaults.synchronize()
     }
     
     /*

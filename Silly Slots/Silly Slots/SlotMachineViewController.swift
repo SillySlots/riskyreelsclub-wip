@@ -73,7 +73,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         loadData()
         setupUI()
         spinSlots()
-       
+        defaults.set("0.1", forKey: "bettingAmount")
+        defaults.synchronize()
         
         print(" BET CONFIRMED STATUS \(defaults.bool(forKey: "betConfirmed"))")
     }

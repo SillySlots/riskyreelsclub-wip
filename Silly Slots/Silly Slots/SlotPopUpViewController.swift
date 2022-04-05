@@ -36,9 +36,9 @@ class SlotPopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defaults.set(false, forKey: "betConfirmed")
+        defaults.set("0.1", forKey:"bettingAmount")
         defaults.set(1, forKey: "countBet")
-        
-        
+        betField.text = "0.1"
 
         // Do any additional setup after loading the view.
     }
@@ -46,6 +46,12 @@ class SlotPopUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
       //  defaults.set(1, forKey: "countBet")
         defaults.set(false, forKey: "betConfirmed")
+        
+        if(defaults.bool(forKey: "betUpdated")){
+            
+            betField.text = defaults.string(forKey: "bettingAmount")
+        }
+        
         defaults.synchronize()
     }
     override func viewDidDisappear(_ animated: Bool) {
@@ -56,11 +62,8 @@ class SlotPopUpViewController: UIViewController {
     }
     
     
-    
-    
-    
+  
     @IBAction func confirmAction(_ sender: Any) {
-       
         Verbose.amount = betField.text!
         Verbose.password = passwordField.text!
         
