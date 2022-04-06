@@ -55,8 +55,8 @@ There will be 1000 with three different rarities, 600 rare, 300 epic, and 100 le
 * [x] User can access their crypto wallet
 * [x] User can customize app through settings
 * [x] User can spin slot machine
-* [ ] User receives something back for winning the slot machine (crypto)
-* [ ] Read if user is gambling with NFTs or just with crypto (non-holder vs holder)
+* [x] User receives something back for winning the slot machine (crypto)
+* [x] Read if user is gambling with NFTs or just with crypto (non-holder vs holder)
 
 **Optional Nice-to-have Stories**
 
