@@ -185,7 +185,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let size = CGSize(width: 80, height: 80)
             image = resizeImage(image: image, targetSize: size)!
             
-            print("\(SlotMachineViewController.createLocalUrl(forImageNamed: randomName))")
+            //print("\(SlotMachineViewController.createLocalUrl(forImageNamed: randomName))")
             
             if(validate) {
 //                stringArray[0] = randomSet[randomNumber]["my Image"]!
