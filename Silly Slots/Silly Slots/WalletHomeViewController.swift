@@ -54,7 +54,7 @@ class WalletHomeViewController: UIViewController {
         
         
         print(balanceString + " is the balance string")
-        self.balanceLabel.text = (balanceString + ".00")
+        self.balanceLabel.text = (balanceString + "")
         
         
 //        let query = PFQuery(className:"walletManagement")

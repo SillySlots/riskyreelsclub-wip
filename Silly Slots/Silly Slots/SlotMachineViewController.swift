@@ -149,18 +149,43 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return newImage
     }
     
+    static func createLocalUrl(forImageNamed name: String) -> URL? {
+
+            let fileManager = FileManager.default
+            let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+            let url = cacheDirectory.appendingPathComponent("\(name).png")
+
+            guard fileManager.fileExists(atPath: url.path) else {
+                guard
+                    let image = UIImage(named: name),
+                    let data = image.pngData()
+                else { return nil }
+
+                fileManager.createFile(atPath: url.path, contents: data, attributes: nil)
+                return url
+            }
+
+            return url
+        print("\(url)")
+        }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
         
         randomSet = [["myImage":"ape"], ["myImage":"banana"], ["myImage":"rug"], ["myImage":"diamond"], ["myImage":"treasure"],["myImage":"dollarsign"]]
+        //print ("\(randomSet)")
+        
         var i = 0
         func randomiseSet (validate: Bool) -> UIImage{
             let randomNumber:Int = Int(arc4random_uniform(5))
             //print("about to print")
             //print("\(randomSet[randomNumber]["myImage"]!)")
             
-            var image = UIImage(named: randomSet[randomNumber]["myImage"]!)!
+            let randomName = randomSet[randomNumber]["myImage"]!
+            var image = UIImage(named: randomName)!
             let size = CGSize(width: 80, height: 80)
             image = resizeImage(image: image, targetSize: size)!
+            
+            print("\(SlotMachineViewController.createLocalUrl(forImageNamed: randomName))")
             
             if(validate) {
 //                stringArray[0] = randomSet[randomNumber]["my Image"]!
@@ -338,8 +363,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let password = SlotPopUpViewController.Verbose.password
         
        // print(password)
-        let completedTranscation = initializeTranscation()
-        //let completedTranscation = true
+       // let completedTranscation = initializeTranscation()
+        let completedTranscation = true
         if(completedTranscation == true) {
         spinSlots()
         checkWinOrLose()
