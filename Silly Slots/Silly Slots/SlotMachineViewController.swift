@@ -49,15 +49,15 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         static var ourPass = String()
     }
     
-    var dollarsign = UIImage(named: "dollarSign.png")!
-    var wpng = UIImage(named: "w.png")!
-    var gpng = UIImage(named: "g.png")!
-    var ipng = UIImage(named: "i.png")!
-    var ape = UIImage(named: "ape.png")!
-    var rug = UIImage(named: "rug.png")!
-    var diamond = UIImage(named: "diamond.png")!
-    var banana = UIImage(named: "banana.png")!
-    var treasure = UIImage(named: "treasure.png")!
+    var dollarsign = UIImage(imageLiteralResourceName: "dollarSign")
+//    var wpng = UIImage(named: "w.png")!
+//    var gpng = UIImage(named: "g.png")!
+//    var ipng = UIImage(named: "i.png")!
+    var ape = UIImage(imageLiteralResourceName: "ape")
+    var rug = UIImage(imageLiteralResourceName: "rug")
+    var diamond = UIImage(imageLiteralResourceName: "diamond")
+    var banana = UIImage(imageLiteralResourceName: "banana")
+    var treasure = UIImage(imageLiteralResourceName: "treasure")
     
     var betConfirm = false
     var imageArray2: [UIImage] = [
@@ -68,7 +68,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
       ]
     
+    var randomImages = [UIImage(), UIImage(), UIImage(), UIImage(), UIImage(), UIImage()]
+    
     var imageView = UIImageView()
+    var pickedImages = Array<UIImage>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,6 +174,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
         
+        randomImages = [ape, banana, diamond, rug, treasure, dollarsign]
+        
+        
+        
         randomSet = [["myImage":"ape"], ["myImage":"banana"], ["myImage":"rug"], ["myImage":"diamond"], ["myImage":"treasure"],["myImage":"dollarsign"]]
         //print ("\(randomSet)")
         
@@ -208,26 +215,49 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         switch component {
             case 0:
             //verbose = true
-            let image =  randomiseSet(validate: true)
+//        let image = randomImages.randomElement();
+//            let size = CGSize(width: 80, height: 80)
+//            image = resizeImage(image: image ?? UIImage(imageLiteralResourceName: "defaultImage"), targetSize: size)!
+            
+            let image = randomiseSet(validate: true)
            imageView = UIImageView(image: image)
-            componentsFromRow[0] = image
+//            componentsFromRow[0] = image ?? UIImage(imageLiteralResourceName: "defaultImage")
+//            pickedImages.append(image ?? UIImage(imageLiteralResourceName: "defaultImage"))
+            print("\(image)")
+            
             case 1 :
             
             //verbose = true
             let image =  randomiseSet(validate: true)
+//            var image = randomImages.randomElement();
+//            let size = CGSize(width: 80, height: 80)
+//            image = resizeImage(image: image ?? UIImage(imageLiteralResourceName: "defaultImage"), targetSize: size)!
            imageView = UIImageView(image: image)
-            componentsFromRow[1] = image
+//            componentsFromRow[1] = image ?? UIImage(imageLiteralResourceName: "defaultImage")
+//            pickedImages.append(image ?? UIImage(imageLiteralResourceName: "defaultImage"))
+            print("\(image)")
             
             case 2 :
             //verbose = true
             let image =  randomiseSet(validate: true)
+//            var image = randomImages.randomElement();
+//            let size = CGSize(width: 80, height: 80)
+//            image = resizeImage(image: image ?? UIImage(imageLiteralResourceName: "defaultImage"), targetSize: size)!
            imageView = UIImageView(image: image)
-            componentsFromRow[2] = image
+//            componentsFromRow[2] = image ?? UIImage(imageLiteralResourceName: "defaultImage")
+//            pickedImages.append(image ?? UIImage(imageLiteralResourceName: "defaultImage"))
+            print("\(image)")
+            
             case 3 :
            // verbose = true
-            let image =  randomiseSet(validate: true)
+           let image =  randomiseSet(validate: true)
+//            var image = randomImages.randomElement();
+//            let size = CGSize(width: 80, height: 80)
+//            image = resizeImage(image: image ?? UIImage(imageLiteralResourceName: "defaultImage"), targetSize: size)!
            imageView = UIImageView(image: image)
-            componentsFromRow[3] = image
+//            componentsFromRow[3] = image ?? UIImage(imageLiteralResourceName: "defaultImage")
+//            pickedImages.append(image ?? UIImage(imageLiteralResourceName: "defaultImage"))
+            print("\(image)")
             
             default : print("done")
         }
@@ -313,7 +343,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         print("\(comp2)")
         print("\(comp3)")
        
-
+       
+//        if (pickedImages.popFirst() == randomIm ){
+//
+//        }
        
         if (comp0.isEqual(comp1) && comp1.isEqual(comp2) && comp2.isEqual(comp3)){
             print("they are the same")
