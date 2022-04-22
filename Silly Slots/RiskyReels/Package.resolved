@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BigInt",
+        "repositoryURL": "https://github.com/attaswift/BigInt.git",
+        "state": {
+          "branch": null,
+          "revision": "0ed110f7555c34ff468e72e1686e59721f2b0da6",
+          "version": "5.3.0"
+        }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "4c4662dcff510fe0c74323279711daed16f08528",
+          "version": "1.5.0"
+        }
+      },
+      {
+        "package": "PromiseKit",
+        "repositoryURL": "https://github.com/mxcl/PromiseKit.git",
+        "state": {
+          "branch": null,
+          "revision": "3fd8c77ded8a4bbee548e3bd6c987ffe8c1e3574",
+          "version": "6.17.0"
+        }
+      },
+      {
+        "package": "secp256k1",
+        "repositoryURL": "https://github.com/Boilertalk/secp256k1.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "45e458ec3be46cf0a6eb68bc947f797852dc65d8",
+          "version": "0.1.6"
+        }
+      },
+      {
+        "package": "Web3",
+        "repositoryURL": "https://github.com/Boilertalk/Web3.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "1a6830ecc093f0f19054fed4c135dfee7bebe2b2",
+          "version": "0.5.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

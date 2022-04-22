@@ -42,6 +42,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let isHD: Bool
     }
     
+    enum TransactionErrors : Error {
+        case insufficientFunds
+    }
+    
 
     struct ImportantVals {
         static var privKey = String()
@@ -396,8 +400,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let password = SlotPopUpViewController.Verbose.password
         
        // print(password)
-       // let completedTranscation = initializeTranscation()
-        let completedTranscation = true
+        let completedTranscation = initializeTranscation()
+        //let completedTranscation = true
         if(completedTranscation == true) {
         spinSlots()
         checkWinOrLose()
@@ -416,6 +420,9 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     
     
+    func sendTranscation() -> Bool {
+        return true
+    }
     func initializeTranscation() -> Bool{
         let password = SlotPopUpViewController.Verbose.password
         
@@ -444,31 +451,38 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //let value: String = "1.0" // In Ether
         let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
         //sends the money to our public address
+    
         let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!
+  
+    
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
         let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
         var options = TransactionOptions.defaultOptions
+        let parameters: [AnyObject] = [toAddress, amount!] as [AnyObject]
         //options.value = amount
         options.from = walletAddress
         options.gasPrice = .automatic
         options.gasLimit = .automatic
+       
         let tx = contract.write(
             "fallback",
-            parameters: [AnyObject](),
+            parameters: parameters,
             extraData: Data(),
             transactionOptions: options)!
         
         
-        do {
-         try tx.send(password: password)
-            
-            return true
-        //let result2 = try! transaction.call()
-        //print(result)
-        } catch {
-            displayAlert()
-            return false
-        }
+       let result = try! tx.send(password:password)
+        print(result)
+        return true
+//        do {
+//            try tx.send(password: password)
+//            return true
+//        //let result2 = try! transaction.call()
+//        //print(result)
+//        } catch {
+//            displayAlert()
+//            return false
+//        }
         
     }
     
