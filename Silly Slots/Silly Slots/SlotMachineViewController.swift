@@ -453,10 +453,12 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         print("value: \(value)")
         //let value: String = "1.0" // In Ether
         let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
+        
+        print ("wallet address \(walletAddress)")
         //sends the money to our public address
     
-        let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")!
-  
+        let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")
+        print ("wallet Toaddress \(toAddress)")
     
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
         let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
