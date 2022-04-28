@@ -51,7 +51,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         static var privKey = String()
         static var ourPrivKey = String()
         static var ourPass = String()
+        static var ourWallet = Wallet()
     }
+    
+    
     
     var dollarsign = UIImage(imageLiteralResourceName: "dollarSign")
 //    var wpng = UIImage(named: "w.png")!
@@ -422,10 +425,58 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     
     
-    func sendTranscation() -> Bool {
-        return true
+   
+    func initializeOurWallet() {
+        let query = PFQuery(className:"info")
+        query.getObjectInBackground(withId: "fCmNgfzEQd") { (info, error) in
+                    if error == nil {
+                        
+                        let pass = info!["password"] as? String
+                        let privkey = info!["privAd"] as? String
+                        
+                        ImportantVals.ourPrivKey = privkey!
+                        ImportantVals.ourPass = pass!
+                    } else {
+                        print("it failed")
+                    }
+                }
+   
+
+        
+        let password = ImportantVals.ourPass
+        let key = ImportantVals.ourPrivKey
+        // or use the the non-blocking method findObjectsInBackground
+
+        query.findObjectsInBackground { (results: [PFObject]?, error: Error?) in
+          // do some stuff with results
+        }
+        let formattedKey = key.trimmingCharacters(in: .whitespacesAndNewlines)
+        let dataKey = Data.fromHex(formattedKey)!
+        let keystore = try! EthereumKeystoreV3(privateKey: dataKey, password: password)!
+        let name = "New Wallet"
+        let keyData = try! JSONEncoder().encode(keystore.keystoreParams)
+        let address = keystore.addresses!.first!.address
+        let wallet = Wallet(address: address, data: keyData, name: name, isHD: false)
+        
+        
+        ImportantVals.ourWallet = wallet
+        
+        
+        let data = wallet.data
+        let keystoreManager: KeystoreManager
+        if wallet.isHD {
+            let keystore = BIP32Keystore(data)!
+            keystoreManager = KeystoreManager([keystore])
+        } else {
+            let keystore = EthereumKeystoreV3(data)!
+            keystoreManager = KeystoreManager([keystore])
+        }
+        
+        
+        
     }
     func initializeTranscation() -> Bool{
+        initializeOurWallet()
         let password = SlotPopUpViewController.Verbose.password
         
        // print(password)
@@ -457,7 +508,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         print ("wallet address \(walletAddress)")
         //sends the money to our public address
     
-        let toAddress = EthereumAddress("0x4540c5722522f258f101eEd4CC087E80E1Ae9D7e")
+        let toWallet = ImportantVals.ourWallet
+        let toAddress = EthereumAddress(toWallet.address)
         print ("wallet Toaddress \(toAddress)")
     
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
@@ -476,11 +528,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             extraData: Data(),
             transactionOptions: options)!
         
-       // let signedContract = EthereumTransaction.
-//        let gas = web3.eth.getGasPrice()
-//        EthereumTransaction.init(gasPrice: gas, gasLimit: <#T##BigUInt#>, to: <#T##EthereumAddress#>, value: <#T##BigUInt#>, data: <#T##Data#>)
-//       
-      //  web3.wallet.signTX(transaction: tx, account: walletAddress)
        let result = try! tx.send(password:password)
         print(result)
         return true
