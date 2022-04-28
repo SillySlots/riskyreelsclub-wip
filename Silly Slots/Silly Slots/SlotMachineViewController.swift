@@ -227,7 +227,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
            imageView = UIImageView(image: image)
 //            componentsFromRow[0] = image ?? UIImage(imageLiteralResourceName: "defaultImage")
 //            pickedImages.append(image ?? UIImage(imageLiteralResourceName: "defaultImage"))
-            print("\(image)")
+           // print("\(image)")
             
             case 1 :
             
@@ -239,7 +239,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
            imageView = UIImageView(image: image)
 //            componentsFromRow[1] = image ?? UIImage(imageLiteralResourceName: "defaultImage")
 //            pickedImages.append(image ?? UIImage(imageLiteralResourceName: "defaultImage"))
-            print("\(image)")
+            //print("\(image)")
             
             case 2 :
             //verbose = true
@@ -250,7 +250,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
            imageView = UIImageView(image: image)
 //            componentsFromRow[2] = image ?? UIImage(imageLiteralResourceName: "defaultImage")
 //            pickedImages.append(image ?? UIImage(imageLiteralResourceName: "defaultImage"))
-            print("\(image)")
+            //print("\(image)")
             
             case 3 :
            // verbose = true
@@ -261,7 +261,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
            imageView = UIImageView(image: image)
 //            componentsFromRow[3] = image ?? UIImage(imageLiteralResourceName: "defaultImage")
 //            pickedImages.append(image ?? UIImage(imageLiteralResourceName: "defaultImage"))
-            print("\(image)")
+            //print("\(image)")
             
             default : print("done")
         }
@@ -342,10 +342,10 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let comp3 = stringArray[3]
         
         
-        print("\(comp0)")
-        print("\(comp1)")
-        print("\(comp2)")
-        print("\(comp3)")
+//        print("\(comp0)")
+//        print("\(comp1)")
+//        print("\(comp2)")
+//        print("\(comp3)")
        
        
 //        if (pickedImages.popFirst() == randomIm ){
@@ -450,6 +450,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         web3.addKeystoreManager(keystoreManager)
         
         let value = SlotPopUpViewController.Verbose.amount
+        print("value: \(value)")
         //let value: String = "1.0" // In Ether
         let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
         //sends the money to our public address
@@ -459,16 +460,17 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
         let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
+        print("amount\(String(describing: amount))")
         var options = TransactionOptions.defaultOptions
-        let parameters: [AnyObject] = [toAddress, amount!] as [AnyObject]
-        //options.value = amount
+       // let parameters: [AnyObject] = [toAddress, amount!] as [AnyObject]
+        options.value = amount
         options.from = walletAddress
         options.gasPrice = .automatic
         options.gasLimit = .automatic
        
         let tx = contract.write(
             "fallback",
-            parameters: parameters,
+            parameters: [AnyObject](),
             extraData: Data(),
             transactionOptions: options)!
         
