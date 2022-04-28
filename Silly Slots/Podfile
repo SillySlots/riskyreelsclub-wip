@@ -12,5 +12,6 @@ target 'Silly Slots' do
 	pod 'BigInt', '~> 5.2'
 	pod 'web3swift'
 	pod 'Wallet', '~> 5.0'
+	pod 'web3.swift' 
 
 end

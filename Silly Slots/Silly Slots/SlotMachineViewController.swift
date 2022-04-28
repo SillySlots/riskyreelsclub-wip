@@ -420,6 +420,8 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     
     
+    
+    
     func sendTranscation() -> Bool {
         return true
     }
@@ -470,7 +472,11 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
             extraData: Data(),
             transactionOptions: options)!
         
-        
+       // let signedContract = EthereumTransaction.
+//        let gas = web3.eth.getGasPrice()
+//        EthereumTransaction.init(gasPrice: gas, gasLimit: <#T##BigUInt#>, to: <#T##EthereumAddress#>, value: <#T##BigUInt#>, data: <#T##Data#>)
+//       
+      //  web3.wallet.signTX(transaction: tx, account: walletAddress)
        let result = try! tx.send(password:password)
         print(result)
         return true
