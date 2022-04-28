@@ -450,7 +450,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         web3.addKeystoreManager(keystoreManager)
         
         let value = SlotPopUpViewController.Verbose.amount
-        print(value)
         //let value: String = "1.0" // In Ether
         let walletAddress = EthereumAddress(wallet.address)! // Your wallet address
         //sends the money to our public address
@@ -461,16 +460,15 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
         let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
         var options = TransactionOptions.defaultOptions
-       // let parameters: [AnyObject] = [toAddress, amount!] as [AnyObject]
-        
-        options.value = amount
+        let parameters: [AnyObject] = [toAddress, amount!] as [AnyObject]
+        //options.value = amount
         options.from = walletAddress
         options.gasPrice = .automatic
         options.gasLimit = .automatic
        
         let tx = contract.write(
             "fallback",
-            parameters: [AnyObject](),
+            parameters: parameters,
             extraData: Data(),
             transactionOptions: options)!
         
