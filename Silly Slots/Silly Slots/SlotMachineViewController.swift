@@ -419,12 +419,6 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
         }
     
-    
-    
-    
-    func sendTranscation() -> Bool {
-        return true
-    }
     func initializeTranscation() -> Bool{
         let password = SlotPopUpViewController.Verbose.password
         

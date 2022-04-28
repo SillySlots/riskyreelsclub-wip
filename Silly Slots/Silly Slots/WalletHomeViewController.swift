@@ -49,7 +49,7 @@ class WalletHomeViewController: UIViewController {
         
         
         let balanceResult = try! web3.eth.getBalance(address: walletAddress)
-        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)!
+        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 5)!
         
         
         
