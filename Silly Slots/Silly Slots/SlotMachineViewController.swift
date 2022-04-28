@@ -445,7 +445,7 @@ class SlotMachineViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
         
         
-        let web3 = Web3.InfuraRinkebyWeb3()
+        let web3 = Web3.InfuraMainnetWeb3()
         
         web3.addKeystoreManager(keystoreManager)
         
